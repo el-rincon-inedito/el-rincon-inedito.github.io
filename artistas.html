@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Artistas | El Rincón Inédito</title>
+    <style>
+        :root { --primary: #00ff88; --bg: #050505; --card-bg: #121212; --text: #e0e0e0; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 20px; }
+        
+        .container { max-width: 800px; margin: 0 auto; padding-top: 40px; }
+        
+        /* Estilo del Buscador */
+        .search-container { margin-bottom: 40px; position: sticky; top: 20px; z-index: 10; }
+        #searchInput {
+            width: 100%; padding: 15px 20px; border-radius: 30px; border: 1px solid #333;
+            background: #1a1a1a; color: white; font-size: 1.1rem; outline: none;
+            transition: 0.3s; box-sizing: border-box;
+        }
+        #searchInput:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(0, 255, 136, 0.2); }
+
+        /* Lista de Artistas */
+        .artist-list { list-style: none; padding: 0; }
+        .artist-item { 
+            border-bottom: 1px solid #222; transition: 0.2s;
+        }
+        .artist-item a {
+            display: block; padding: 20px; color: white; text-decoration: none;
+            font-size: 1.3rem; font-weight: 500;
+        }
+        .artist-item:hover { background: #111; padding-left: 10px; }
+        .artist-item a:hover { color: var(--primary); }
+
+        .no-results { display: none; text-align: center; color: #555; margin-top: 50px; }
+
+        .back-home { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-home">← Volver al Inicio</a>
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Índice de Artistas</h1>
+        <p style="color: #888; margin-bottom: 30px;">Busca en nuestra base de datos de archivos inéditos.</p>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" onkeyup="filterArtists()" placeholder="Escribe el nombre de un artista...">
+        </div>
+
+        <ul class="artist-list" id="artistList">
+            <li class="artist-item"><a href="spinetta.html">Luis Alberto Spinetta</a></li>
+            <li class="artist-item"><a href="#">Charly García (Próximamente)</a></li>
+            <li class="artist-item"><a href="#">Fito Páez (Próximamente)</a></li>
+            <li class="artist-item"><a href="#">Pappo (Próximamente)</a></li>
+            <li class="artist-item"><a href="#">Serú Girán (Próximamente)</a></li>
+            <li class="artist-item"><a href="#">Virus (Próximamente)</a></li>
+        </ul>
+
+        <div id="noResults" class="no-results">No se encontraron artistas con ese nombre.</div>
+    </div>
+
+    <script>
+        function filterArtists() {
+            let input = document.getElementById('searchInput');
+            let filter = input.value.toLowerCase();
+            let ul = document.getElementById("artistList");
+            let li = ul.getElementsByTagName('li');
+            let results = false;
+
+            for (let i = 0; i < li.length; i++) {
+                let a = li[i].getElementsByTagName("a")[0];
+                let txtValue = a.textContent || a.innerText;
+                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                    results = true;
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+            
+            document.getElementById("noResults").style.display = results ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
+
