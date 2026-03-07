@@ -1,149 +1,218 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discografía | Luis Alberto Spinetta - El Rincón Inédito</title>
+    <title>Discografía Cronológica | Spinetta - El Rincón Inédito</title>
     <style>
         :root {
             --primary: #00ff88;
             --bg: #050505;
             --card-bg: #121212;
             --text: #e0e0e0;
+            --almendra: #ff4d4d; /* Rojo */
+            --pescado: #ffcc00;  /* Amarillo */
+            --invisible: #3399ff; /* Azul */
+            --jade: #cc66ff;     /* Violeta */
+            --solista: #00ff88;  /* Verde (Tu color principal) */
+            --socios: #ff8000;   /* Naranja */
         }
 
         body {
             background-color: var(--bg);
             color: var(--text);
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
-            line-height: 1.6;
+            padding-bottom: 50px;
         }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
         
-        .back-link { display: block; margin-bottom: 30px; color: var(--primary); text-decoration: none; font-weight: bold; }
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { color: var(--primary); letter-spacing: 3px; margin-bottom: 10px; }
+        .header p { color: #666; font-size: 0.9rem; }
 
-        h1 { color: var(--primary); text-align: center; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 50px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: bold; }
 
-        /* Estilo de las Eras */
-        .era-section { margin-bottom: 60px; }
-        
-        .era-title {
-            border-bottom: 2px solid #222;
-            padding-bottom: 10px;
-            margin-bottom: 25px;
-            color: var(--primary);
-            font-size: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .era-year { color: #555; font-size: 1rem; }
-
-        /* Grilla de Discos */
-        .disc-grid {
+        /* Grilla Cronológica */
+        .chrono-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
         }
 
         .album-card {
             background: var(--card-bg);
+            border-radius: 15px;
             padding: 20px;
-            border-radius: 12px;
             border: 1px solid #222;
-            text-align: center;
-            transition: 0.3s;
+            position: relative;
+            transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .album-card:hover {
             border-color: var(--primary);
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.1);
         }
 
-        .album-card strong { display: block; color: white; margin-top: 10px; font-size: 1rem; }
-        .album-card span { color: #666; font-size: 0.85rem; }
-        
-        .label-special {
-            font-size: 0.7rem;
-            background: #222;
-            color: var(--primary);
-            padding: 2px 8px;
-            border-radius: 10px;
-            display: inline-block;
-            margin-bottom: 5px;
+        .year-tag {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 10px;
         }
+
+        .album-name {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            min-height: 2.5rem;
+        }
+
+        /* Etiquetas de Bandas */
+        .band-label {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Colores por banda */
+        .tag-almendra { background: rgba(255, 77, 77, 0.1); color: var(--almendra); border: 1px solid var(--almendra); }
+        .tag-pescado { background: rgba(255, 204, 0, 0.1); color: var(--pescado); border: 1px solid var(--pescado); }
+        .tag-invisible { background: rgba(51, 153, 255, 0.1); color: var(--invisible); border: 1px solid var(--invisible); }
+        .tag-jade { background: rgba(204, 102, 255, 0.1); color: var(--jade); border: 1px solid var(--jade); }
+        .tag-solista { background: rgba(0, 255, 136, 0.1); color: var(--solista); border: 1px solid var(--solista); }
+        .tag-socios { background: rgba(255, 128, 0, 0.1); color: var(--socios); border: 1px solid var(--socios); }
+
     </style>
 </head>
 <body>
 
 <div class="container">
-    <a href="spinetta.html" class="back-link">← Volver a Spinetta</a>
-    <h1>Discografía Oficial</h1>
-
-    <div class="era-section">
-        <div class="era-title">Almendra <span class="era-year">1969 - 1970 / 1980</span></div>
-        <div class="disc-grid">
-            <div class="album-card"><span>1969</span><strong>Almendra I</strong></div>
-            <div class="album-card"><span>1970</span><strong>Almendra II</strong></div>
-            <div class="album-card"><span>1980</span><strong>El Valle Interior</strong></div>
-        </div>
+    <a href="spinetta.html" class="back-link">← Volver</a>
+    <div class="header">
+        <h1>Discografía Completa</h1>
+        <p>Un recorrido cronológico por la obra de Luis Alberto Spinetta</p>
     </div>
 
-    <div class="era-section">
-        <div class="era-title">Pescado Rabioso <span class="era-year">1972 - 1973</span></div>
-        <div class="disc-grid">
-            <div class="album-card"><span>1972</span><strong>Desatormentándonos</strong></div>
-            <div class="album-card"><span>1973</span><strong>Pescado 2</strong></div>
-            <div class="album-card"><span class="label-special">Obra Maestra</span><span>1973</span><strong>Artaud</strong></div>
+    <div class="chrono-grid">
+        <div class="album-card">
+            <div class="year-tag">1969</div>
+            <div class="album-name">Almendra I</div>
+            <div class="band-label tag-almendra">Almendra</div>
         </div>
-    </div>
 
-    <div class="era-section">
-        <div class="era-title">Invisible <span class="era-year">1974 - 1976</span></div>
-        <div class="disc-grid">
-            <div class="album-card"><span>1974</span><strong>Invisible</strong></div>
-            <div class="album-card"><span>1975</span><strong>Durazno Sangrando</strong></div>
-            <div class="album-card"><span>1976</span><strong>El Jardín de los Presentes</strong></div>
+        <div class="album-card">
+            <div class="year-tag">1970</div>
+            <div class="album-name">Almendra II</div>
+            <div class="band-label tag-almendra">Almendra</div>
         </div>
-    </div>
 
-    <div class="era-section">
-        <div class="era-title">Spinetta Jade & Solista <span class="era-year">1980 - 1989</span></div>
-        <div class="disc-grid">
-            <div class="album-card"><span>1980</span><strong>Alma de Diamante</strong></div>
-            <div class="album-card"><span>1982</span><strong>Kamikaze</strong></div>
-            <div class="album-card"><span>1983</span><strong>Bajo Belgrano</strong></div>
-            <div class="album-card"><span>1986</span><strong>Privé</strong></div>
-            <div class="album-card"><span>1988</span><strong>Téster de Violencia</strong></div>
+        <div class="album-card">
+            <div class="year-tag">1971</div>
+            <div class="album-name">Spinettalandia</div>
+            <div class="band-label tag-solista">Solista</div>
         </div>
-    </div>
 
-    <div class="era-section">
-        <div class="era-title">Socios del Desierto & 90s <span class="era-year">1991 - 1999</span></div>
-        <div class="disc-grid">
-            <div class="album-card"><span>1991</span><strong>Pelusón of Milk</strong></div>
-            <div class="album-card"><span>1997</span><strong>Spinetta y los Socios del Desierto</strong></div>
-            <div class="album-card"><span>1997</span><strong>Estrelicia (MTV Unplugged)</strong></div>
-            <div class="album-card"><span>1999</span><strong>Los Ojos</strong></div>
+        <div class="album-card">
+            <div class="year-tag">1972</div>
+            <div class="album-name">Desatormentándonos</div>
+            <div class="band-label tag-pescado">Pescado Rabioso</div>
         </div>
-    </div>
 
-    <div class="era-section">
-        <div class="era-title">Última Etapa <span class="era-year">2001 - Presente</span></div>
-        <div class="disc-grid">
-            <div class="album-card"><span>2001</span><strong>Silver Sorgo</strong></div>
-            <div class="album-card"><span>2003</span><strong>Para los Árboles</strong></div>
-            <div class="album-card"><span>2006</span><strong>Pan</strong></div>
-            <div class="album-card"><span>2008</span><strong>Un Mañana</strong></div>
-            <div class="album-card"><span class="label-special">Póstumo</span><span>2015</span><strong>Los Amigo</strong></div>
-            <div class="album-card"><span class="label-special">Póstumo</span><span>2020</span><strong>Ya no mires atrás</strong></div>
+        <div class="album-card">
+            <div class="year-tag">1973</div>
+            <div class="album-name">Pescado 2</div>
+            <div class="band-label tag-pescado">Pescado Rabioso</div>
         </div>
-    </div>
 
+        <div class="album-card">
+            <div class="year-tag">1973</div>
+            <div class="album-name">Artaud</div>
+            <div class="band-label tag-pescado">Pescado Rabioso</div>
+        </div>
+
+        <div class="album-card">
+            <div class="year-tag">1974</div>
+            <div class="album-name">Invisible</div>
+            <div class="band-label tag-invisible">Invisible</div>
+        </div>
+
+        <div class="album-card">
+            <div class="year-tag">1975</div>
+            <div class="album-name">Durazno Sangrando</div>
+            <div class="band-label tag-invisible">Invisible</div>
+        </div>
+
+        <div class="album-card">
+            <div class="year-tag">1976</div>
+            <div class="album-name">El Jardín de los Presentes</div>
+            <div class="band-label tag-invisible">Invisible</div>
+        </div>
+
+        <div class="album-card">
+            <div class="year-tag">1977</div>
+            <div class="album-name">A 18' del Sol</div>
+            <div class="band-label tag-solista">Solista</div>
+        </div>
+
+        <div class="album-card">
+            <div class="year-tag">1980</div>
+            <div class="album-name">Alma de Diamante</div>
+            <div class="band-label tag-jade">Spinetta Jade</div>
+        </div>
+
+        <div class="album-card">
+            <div class="year-tag">1980</div>
+            <div class="album-name">El Valle Interior</div>
+            <div class="band-label tag-almendra">Almendra</div>
+        </div>
+
+        <div class="album-card">
+            <div class="year-tag">1982</div>
+            <div class="album-name">Kamikaze</div>
+            <div class="band-label tag-solista">Solista</div>
+        </div>
+
+        <div class="album-card">
+            <div class="year-tag">1983</div>
+            <div class="album-name">Bajo Belgrano</div>
+            <div class="band-label tag-jade">Spinetta Jade</div>
+        </div>
+
+        <div class="album-card">
+            <div class="year-tag">1991</div>
+            <div class="album-name">Pelusón of Milk</div>
+            <div class="band-label tag-solista">Solista</div>
+        </div>
+
+        <div class="album-card">
+            <div class="year-tag">1997</div>
+            <div class="album-name">Spinetta y los Socios del Desierto</div>
+            <div class="band-label tag-socios">Socios del Desierto</div>
+        </div>
+
+        <div class="album-card">
+            <div class="year-tag">2008</div>
+            <div class="album-name">Un Mañana</div>
+            <div class="band-label tag-solista">Solista</div>
+        </div>
+
+        <div class="album-card">
+            <div class="year-tag">2020</div>
+            <div class="album-name">Ya no mires atrás</div>
+            <div class="band-label tag-solista">Póstumo</div>
+        </div>
+
+    </div>
 </div>
 
 </body>
