@@ -64,20 +64,25 @@
             padding: 0 5px; /* Pequeño margen interno */
         }
 
-        /* ESTILO BARRA DE BUSQUEDA */
-        #conciertoSearch {
-            width: 100%; /* Ocupa todo el ancho del contenedor */
-            max-width: 600px; /* Pero no se hace gigante en PC */
-            padding: 16px 24px;
-            border-radius: 40px; /* Bordes muy redondeados */
-            border: 1px solid var(--border);
-            background: #181818; /* Fondo un poco más claro que el body */
-            color: white;
-            font-size: 1rem;
-            outline: none;
-            transition: 0.3s ease;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
-        }
+        /* --- BUSCADOR (Sección corregida) --- */
+#conciertoSearch {
+    width: 100%;
+    max-width: 600px;
+    padding: 16px 24px;
+    border-radius: 40px;
+    border: 1px solid #333; /* Borde gris simple */
+    background: #181818;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+    /* Quitamos cualquier sombra aquí */
+}
+
+#conciertoSearch:focus {
+    border-color: var(--primary); /* Solo cambia el color del borde al tocarlo */
+    background: #1c1c1c;
+}
 
         #conciertoSearch:focus {
             border-color: var(--primary);
@@ -133,21 +138,27 @@
             font-weight: 800;
         }
 
-        /* CAJA DE ACCION (MÓVIL) */
-        .action-box { text-align: center; margin-top: 10px; }
-        .btn-ver {
-            background: transparent;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            padding: 14px 30px; /* Botón más grande para el dedo */
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: 0.3s ease;
-            display: inline-block;
-            width: 100%; /* Botón ancho completo en móvil */
-        }
+        /* --- BOTÓN (Sección corregida sin brillo) --- */
+.btn-ver {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 14px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.btn-ver:hover {
+    background: var(--primary); /* El botón se llena de color sólido */
+    color: black;
+    box-shadow: none !important; /* IMPORTANTE: Esto asegura que no haya brillo */
+}
         .btn-ver:hover { background: var(--primary); color: black; box-shadow: 0 0 15px var(--primary); }
 
         /* MEDIA QUERIES (AJUSTES PARA PC) */
