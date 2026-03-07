@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivo General | El Rincón Inédito</title>
+    <style>
+        :root {
+            --primary: #00ff88;
+            --bg: #050505;
+            --card-bg: #121212;
+            --text: #e0e0e0;
+        }
+
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding-bottom: 50px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: bold; }
+        
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { color: var(--primary); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
+
+        /* Buscador */
+        .search-container { margin-bottom: 40px; text-align: center; }
+        #conciertoSearch {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px 25px;
+            border-radius: 30px;
+            border: 1px solid #333;
+            background: #1a1a1a;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+        #conciertoSearch:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(0, 255, 136, 0.2); }
+
+        .conciertos-list { display: flex; flex-direction: column; gap: 20px; }
+
+        /* Tarjeta de Concierto */
+        .concierto-card {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: 120px 1fr 180px;
+            align-items: center;
+            padding: 20px;
+            transition: 0.3s;
+        }
+        .concierto-card:hover { border-color: var(--primary); background: #161616; }
+
+        .date-box { text-align: center; border-right: 1px solid #333; }
+        .date-box .year { display: block; font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .date-box .day { display: block; font-size: 0.8rem; color: #666; }
+
+        .info-box { padding: 0 25px; }
+        .info-box h3 { margin: 0 0 5px 0; color: white; }
+        .info-box p { margin: 0; color: #888; font-size: 0.9rem; }
+        
+        .band-tag { 
+            display: inline-block; margin-top: 8px; font-size: 0.7rem; 
+            text-transform: uppercase; padding: 2px 8px; border-radius: 4px; border: 1px solid;
+        }
+
+        .action-box { text-align: right; }
+        .btn-ver {
+            background: transparent; border: 1px solid var(--primary); color: var(--primary);
+            padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s;
+        }
+        .btn-ver:hover { background: var(--primary); color: black; }
+
+        @media (max-width: 768px) {
+            .concierto-card { grid-template-columns: 1fr; text-align: center; }
+            .date-box { border-right: none; border-bottom: 1px solid #333; padding-bottom: 15px; }
+            .action-box { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-link">← Inicio</a>
+    
+    <div class="header">
+        <h1>Archivo General de Recitales</h1>
+        <p>Explorá todas las grabaciones disponibles de todos los artistas</p>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="conciertoSearch" placeholder="Buscar por artista, año o lugar..." onkeyup="filterConciertos()">
+    </div>
+
+    <div class="conciertos-list" id="listaConciertos">
+
+        <div class="concierto-card" data-search="spinetta pescado rabioso teatro astral 1973 artaud">
+            <div class="date-box">
+                <span class="year">1973</span>
+                <span class="day">28 de Octubre</span>
+            </div>
+            <div class="info-box">
+                <h3>Teatro Astral</h3>
+                <p>Presentación acústica de "Artaud"</p>
+                <span class="band-tag" style="color: #00ff88; border-color: #00ff88;">Spinetta</span>
+            </div>
+            <div class="action-box">
+                <a href="concierto-astral-73.html" class="btn-ver">Ver Detalles</a>
+            </div>
+        </div>
+
+        </div>
+</div>
+
+<script>
+    function filterConciertos() {
+        let input = document.getElementById('conciertoSearch').value.toLowerCase();
+        let cards = document.getElementsByClassName('concierto-card');
+
+        for (let i = 0; i < cards.length; i++) {
+            let filterData = cards[i].getAttribute('data-search');
+            if (filterData.toLowerCase().includes(input)) {
+                cards[i].style.display = "grid";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
+
