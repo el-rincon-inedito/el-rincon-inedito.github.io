@@ -3,113 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archivo de Demos Inéditas | The Vault</title>
+    <title>The Vault | Archivo de Música Inédita</title>
     <style>
         :root {
-            --primary: #00ff88; /* Verde neón para resaltar */
-            --bg: #0a0a0a;
-            --card-bg: #1a1a1a;
-            --text: #ffffff;
+            --primary: #00ff88;
+            --bg: #050505;
+            --card-bg: #121212;
+            --accent: #1db954; /* Estilo Spotify para familiaridad */
+            --text: #e0e0e0;
         }
 
         body {
             background-color: var(--bg);
             color: var(--text);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Navegación */
+        nav {
+            background: rgba(0,0,0,0.9);
+            padding: 15px 5%;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #333;
         }
 
-        header {
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); letter-spacing: -1px; }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 5%;
             text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 10px;
+            background: linear-gradient(to bottom, #1a1a1a, var(--bg));
         }
 
-        h1 { font-size: 2.5rem; margin-bottom: 5px; }
-        p.subtitle { color: #888; font-style: italic; }
+        .hero h1 { font-size: 3.5rem; margin: 0; color: white; }
+        .hero p { font-size: 1.2rem; color: #888; max-width: 600px; margin: 10px auto; }
 
-        .container {
-            width: 100%;
-            max-width: 800px;
-        }
-
-        /* Estilo de la "Tarjeta" de Canción */
-        .song-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid var(--primary);
-            transition: transform 0.2s;
-        }
-
-        .song-card:hover {
-            transform: scale(1.02);
-        }
-
-        .song-info h2 { margin-top: 0; color: var(--primary); }
-
-        audio {
-            width: 100%;
-            margin: 15px 0;
-            filter: invert(100%) hue-rotate(180deg) brightness(1.5); /* Hace que el reproductor combine con el modo oscuro */
-        }
-
-        .btn-download {
-            display: inline-block;
-            background: transparent;
-            color: var(--primary);
-            border: 1px solid var(--primary);
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .btn-download:hover {
+        .btn-main {
             background: var(--primary);
             color: black;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
         }
 
-        footer {
-            margin-top: 50px;
-            font-size: 0.8rem;
-            color: #444;
+        /* Secciones */
+        .section-title { padding: 0 5%; margin-top: 50px; border-left: 4px solid var(--primary); margin-left: 5%; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 5%;
         }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid #222;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+
+        .tag {
+            background: #333;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+
+        /* Footer / Colaboración */
+        .collab-box {
+            background: var(--primary);
+            color: black;
+            margin: 60px 5%;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .collab-box h2 { margin-top: 0; }
+
+        footer { text-align: center; padding: 40px; color: #555; border-top: 1px solid #222; }
+
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>ARCHIVO INÉDITO</h1>
-        <p class="subtitle">Rescatando joyas perdidas y recitales olvidados</p>
+    <nav>
+        <div class="logo">THE VAULT</div>
+        <div>
+            <a href="#artistas" style="color:white; text-decoration:none; margin-left:20px;">Artistas</a>
+            <a href="#subir" style="color:var(--primary); text-decoration:none; margin-left:20px;">Subir Material</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <span class="tag">Archivo Comunitario</span>
+        <h1>Joyas Musicales Inéditas</h1>
+        <p>Grabaciones perdidas, demos olvidadas y recitales históricos que no encontrarás en plataformas oficiales.</p>
+        <a href="#artista-principal" class="btn-main">Explorar Archivo</a>
     </header>
 
-    <div class="container">
-        
-        <div class="song-card">
-            <div class="song-info">
-                <h2>Demo 1: Nombre de la Canción</h2>
-                <p><strong>Artista:</strong> Artista Desconocido</p>
-                <p><strong>Año/Origen:</strong> Grabación de ensayo, 1994.</p>
-            </div>
-            <audio controls>
-                <source src="demo1.mp3" type="audio/mpeg">
-                Tu navegador no soporta el reproductor.
-            </audio>
-            <a href="demo1.mp3" download class="btn-download">Descargar Archivo</a>
+    <h2 class="section-title" id="artista-principal">Artista Destacado</h2>
+    <div class="grid">
+        <div class="card">
+            <span class="tag">Leyenda Local</span>
+            <h3>Nombre del Artista Principal</h3>
+            <p>Accede a la colección completa de demos y grabaciones de consola de sus giras entre 1990 y 2005.</p>
+            <a href="reproductor.html" style="color:var(--primary); text-decoration:none; font-weight:bold;">Ver catálogo →</a>
         </div>
+    </div>
 
+    <h2 class="section-title">Categorías</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>📼 Demos & Ensayos</h3>
+            <p>Primeras tomas y maquetas antes de los álbumes oficiales.</p>
         </div>
+        <div class="card">
+            <h3>🎸 Recitales Completos</h3>
+            <p>Grabaciones de consola (Soundboard) y audios de público restaurados.</p>
+        </div>
+        <div class="card">
+            <h3>❓ Rarezas</h3>
+            <p>Entrevistas perdidas y versiones alternativas.</p>
+        </div>
+    </div>
+
+    <section class="collab-box" id="subir">
+        <h2>¿Tienes material inédito?</h2>
+        <p>Ayúdanos a preservar la historia musical. Si tienes grabaciones propias o archivos raros, compártelos con la comunidad.</p>
+        <a href="mailto:tuemail@ejemplo.com" class="btn-main" style="background: black; color: white;">Contactar Archivero</a>
+    </section>
 
     <footer>
-        <p>&copy; 2026 Miltonnasheee - Divulgación Musical Inédita</p>
+        <p>&copy; 2026 The Vault | Miltonnasheee. Preservando el legado musical.</p>
     </footer>
 
 </body>
