@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Alberto Spinetta | El Rincón Inédito</title>
+    <style>
+        :root { --primary: #00ff88; --bg: #050505; --card-bg: #121212; --text: #e0e0e0; }
+        body { background-color: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; padding: 20px; }
+        
+        .header-artista { text-align: center; padding: 40px 0; }
+        .foto-perfil { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--primary); object-fit: cover; }
+        
+        .bio { max-width: 700px; margin: 20px auto; line-height: 1.6; color: #bbb; }
+
+        .seccion-archivo { margin-top: 40px; }
+        .grid-recitales { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        
+        .card-recital { 
+            background: var(--card-bg); border-radius: 10px; overflow: hidden; 
+            border: 1px solid #222; transition: 0.3s; text-decoration: none; color: white;
+        }
+        .card-recital:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .portada { width: 100%; height: 180px; object-fit: cover; background: #222; }
+        .info-p { padding: 15px; }
+        .tag { font-size: 0.7rem; color: var(--primary); font-weight: bold; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <div class="header-artista">
+        <img src="https://via.placeholder.com/150" class="foto-perfil" alt="Luis Alberto Spinetta">
+        <h1>Luis Alberto Spinetta</h1>
+        <p class="bio">Poeta, músico y guía de la música argentina. Aquí recopilamos grabaciones de consola, ensayos privados y momentos que el tiempo intentó ocultar.</p>
+    </div>
+
+    <div class="seccion-archivo">
+        <h2 style="border-bottom: 2px solid var(--primary); display: inline-block;">📁 Recitales & Ensayos</h2>
+        <div class="grid-recitales">
+            
+            <a href="spinetta-recital-1.html" class="card-recital">
+                <img src="https://via.placeholder.com/300x180" class="portada" alt="Portada Recital">
+                <div class="info-p">
+                    <span class="tag">Soundboard</span>
+                    <h3>Teatro Astral (1973)</h3>
+                    <p style="font-size: 0.8rem; color: #888;">Grabación inédita de la presentación de Artaud.</p>
+                </div>
+            </a>
+
+            </div>
+    </div>
+
+    <p style="text-align: center; margin-top: 50px;"><a href="index.html" style="color: var(--primary);">← Volver al inicio</a></p>
+
+</body>
+</html>
+
