@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis Alberto Spinetta | El Rincón Inédito</title>
     <style>
+        div[style*="background: var(--card-bg)"]:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary) !important;
+    box-shadow: 0 10px 20px rgba(0, 255, 136, 0.1);
+        }
+        
         :root { --primary: #00ff88; --bg: #050505; --card-bg: #121212; --text: #e0e0e0; }
         body { background-color: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; padding: 20px; }
         
@@ -49,17 +55,46 @@
         <p class="bio">Poeta, músico y guía de la música argentina. Aquí recopilamos grabaciones de consola, ensayos privados y momentos que el tiempo intentó ocultar.</p>
     </div>
 
-    <div class="seccion-archivo">
-        <h2 style="border-bottom: 2px solid var(--primary); display: inline-block;">📁 Recitales & Ensayos</h2>
-        <div class="grid-recitales">
-            
-            <a href="spinetta-recital-1.html" class="card-recital">
-                <img src="https://via.placeholder.com/300x180" class="portada" alt="Portada Recital">
-                <div class="info-p">
-                    <span class="tag">Soundboard</span>
-                    <h3>Teatro Astral (1973)</h3>
-                    <p style="font-size: 0.8rem; color: #888;">Grabación inédita de la presentación de Artaud.</p>
-                </div>
+    <section style="padding: 40px 5%; text-align: center;">
+    <h2 style="color: var(--primary); margin-bottom: 30px; font-size: 2rem; letter-spacing: 2px;">LUIS ALBERTO SPINETTA</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
+        
+        <a href="spinetta-bio.html" style="text-decoration: none;">
+            <div style="background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #333; transition: 0.3s; height: 100%;">
+                <span style="font-size: 2.5rem;">📖</span>
+                <h3 style="color: white; margin-top: 15px;">Biografía</h3>
+                <p style="color: #888; font-size: 0.9rem;">Vida y obra del Flaco.</p>
+            </div>
+        </a>
+
+        <a href="spinetta-discos.html" style="text-decoration: none;">
+            <div style="background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #333; transition: 0.3s; height: 100%;">
+                <span style="font-size: 2.5rem;">💿</span>
+                <h3 style="color: white; margin-top: 15px;">Discografía</h3>
+                <p style="color: #888; font-size: 0.9rem;">Álbumes oficiales y raros.</p>
+            </div>
+        </a>
+
+        <a href="spinetta-conciertos.html" style="text-decoration: none;">
+            <div style="background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--primary); transition: 0.3s; height: 100%;">
+                <span style="font-size: 2.5rem;">🎸</span>
+                <h3 style="color: var(--primary); margin-top: 15px;">Conciertos</h3>
+                <p style="color: #888; font-size: 0.9rem;">Grabaciones inéditas en vivo.</p>
+            </div>
+        </a>
+
+        <a href="spinetta-entrevistas.html" style="text-decoration: none;">
+            <div style="background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #333; transition: 0.3s; height: 100%;">
+                <span style="font-size: 2.5rem;">🎙️</span>
+                <h3 style="color: white; margin-top: 15px;">Entrevistas</h3>
+                <p style="color: #888; font-size: 0.9rem;">Charlas, radio y televisión.</p>
+            </div>
+        </a>
+
+    </div>
+    </section>
+    
             </a>
 
             </div>
