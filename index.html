@@ -27,12 +27,13 @@
         }
 
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', -apple-system, sans-serif;
-            margin: 0;
-            line-height: 1.6;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: sans-serif; /* Cambiado para que sea igual a Spinetta */
+    margin: 0;
+    line-height: 1.6;
         }
+        
 
         /* Navegación */
         nav {
@@ -131,9 +132,12 @@
     
     <div style="display: flex; gap: 12px; align-items: center;">
         <a href="artistas.html" style="color:white; text-decoration:none; margin-left:20px; font-size: 1rem;">Artistas</a>
-        <a href="index.html#subir" style="color:var(--primary); border: 1px solid var(--primary); padding: 4px 8px; border-radius: 5px; text-decoration:none; font-size: 0.85rem; font-weight: bold;">Subir</a>
+        <a href="#subir" style="color:var(--primary); border: 1px solid var(--primary); padding: 5px 10px; border-radius: 5px; text-decoration:none; font-size: 0.85rem; font-weight: bold; display: flex; align-items: center; justify-content: center; line-height: 1;">
+            Subir
+        </a>
     </div>
     </nav>
+    
     
 
     <header class="hero">
