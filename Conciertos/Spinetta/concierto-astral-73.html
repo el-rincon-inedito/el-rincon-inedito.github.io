@@ -146,12 +146,12 @@
         // Si el usuario viene de una página que contiene "general" en la URL
         if (referrer.includes('conciertos-general.html') || referrer.includes('ineditos-general.html')) {
             backLink.href = referrer; // Lo devuelve a la sección general exacta
-            backLink.innerHTML = "← Volver al Archivo General";
+            backLink.innerHTML = "← Volver";
         } 
         // Si no viene de una sección general, asumimos que viene de la página del artista
         else if (referrer !== "") {
             backLink.href = referrer;
-            backLink.innerHTML = "← Volver al Artista";
+            backLink.innerHTML = "← Volver";
         } 
         // Si entró directo por un link compartido (sin historial), lo mandamos al index por seguridad
         else {
