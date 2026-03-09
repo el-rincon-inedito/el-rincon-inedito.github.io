@@ -68,6 +68,42 @@
         .tag-solista { color: var(--c-solista); border-color: var(--c-solista); background: rgba(0, 255, 136, 0.05); }
         .tag-socios { color: var(--c-socios); border-color: var(--c-socios); background: rgba(255, 128, 0, 0.05); }
         .tag-especial { color: var(--c-especial); border-color: var(--c-especial); background: rgba(255, 255, 255, 0.05); }
+
+        /* Sección Spotify Unificada */
+        .spotify-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 40px;
+            background: #0a0a0a;
+            border-radius: 20px;
+            border: 1px solid #1db95422;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-spotify {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #1DB954;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            width: 100%;
+            max-width: 450px;
+            font-size: 0.9rem;
+        }
+
+        .btn-spotify:hover {
+            background: #1ed760;
+            transform: scale(1.03);
+        }
     </style>
 </head>
 <body>
@@ -102,22 +138,44 @@
         <div class="album-card"><div class="year-tag">1986</div><div class="album-name">La La La</div><div class="band-label tag-especial">Spinetta / Páez</div></div>
         <div class="album-card"><div class="year-tag">1988</div><div class="album-name">Téster de violencia</div><div class="band-label tag-solista">Luis Alberto Spinetta</div></div>
         <div class="album-card"><div class="year-tag">1989</div><div class="album-name">Don Lucero</div><div class="band-label tag-solista">Luis Alberto Spinetta</div></div>
-        <div class="album-card"><div class="year-tag">1990</div><div class="album-name">Exactas</div><div class="band-label tag-solista">Luis Alberto Spinetta</div></div>
-        <div class="album-card"><div class="year-tag">1991</div><div class="album-name">Pelusón of milk</div><div class="band-label tag-solista">Luis Alberto Spinetta</div></div>
-        <div class="album-card"><div class="year-tag">1994</div><div class="album-name">Fuego gris</div><div class="band-label tag-solista">Luis Alberto Spinetta</div></div>
-        <div class="album-card"><div class="year-tag">1997</div><div class="album-name">Spinetta y Los Socios del Desierto</div><div class="band-label tag-socios">Socios del Desierto</div></div>
-        <div class="album-card"><div class="year-tag">1997</div><div class="album-name">Estrelicia unpluged</div><div class="band-label tag-solista">Luis Alberto Spinetta</div></div>
-        <div class="album-card"><div class="year-tag">1998</div><div class="album-name">San Cristóforo</div><div class="band-label tag-socios">Socios del Desierto</div></div>
-        <div class="album-card"><div class="year-tag">1999</div><div class="album-name">Los ojos</div><div class="band-label tag-socios">Socios del Desierto</div></div>
-        <div class="album-card"><div class="year-tag">2001</div><div class="album-name">Silver sorgo</div><div class="band-label tag-solista">Luis Alberto Spinetta</div></div>
-        <div class="album-card"><div class="year-tag">2002</div><div class="album-name">Obras en vivo</div><div class="band-label tag-solista">Luis Alberto Spinetta</div></div>
-        <div class="album-card"><div class="year-tag">2003</div><div class="album-name">Para los árboles</div><div class="band-label tag-solista">Luis Alberto Spinetta</div></div>
-        <div class="album-card"><div class="year-tag">2004</div><div class="album-name">Camalotus</div><div class="band-label tag-solista">Luis Alberto Spinetta</div></div>
-        <div class="album-card"><div class="year-tag">2006</div><div class="album-name">Pan</div><div class="band-label tag-solista">Luis Alberto Spinetta</div></div>
         <div class="album-card"><div class="year-tag">2008</div><div class="album-name">Un mañana</div><div class="band-label tag-solista">Luis Alberto Spinetta</div></div>
         <div class="album-card"><div class="year-tag">2010</div><div class="album-name">Spinetta y Las Bandas Eternas</div><div class="band-label tag-especial">Las Bandas Eternas</div></div>
         <div class="album-card"><div class="year-tag">2015</div><div class="album-name">Los Amigo</div><div class="band-label tag-solista">Póstumo</div></div>
         <div class="album-card"><div class="year-tag">2020</div><div class="album-name">Ya no mires atrás</div><div class="band-label tag-solista">Póstumo</div></div>
+    </div>
+
+    <div class="spotify-section">
+        <h2 style="color: #888; font-size: 1rem; margin-bottom: 10px; text-transform: uppercase;">Escuchar en Plataformas Oficiales</h2>
+        
+        <a href="https://open.spotify.com/artist/7x2a9uyqlWbE9LwcoQWDTo?si=pEI5EYciTzuWIvqp1wbJCg" target="_blank" class="btn-spotify">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="20" alt="Spotify">
+            ESCUCHAR ALMENDRA EN PLATAFORMAS OFICIALES
+        </a>
+
+        <a href="https://open.spotify.com/artist/3q1NXsv9XypOUCJfEatXH9?si=NvSu7G1oTSq63KgoeIc5iw" target="_blank" class="btn-spotify">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="20" alt="Spotify">
+            ESCUCHAR PESCADO RABIOSO EN PLATAFORMAS OFICIALES
+        </a>
+
+        <a href="https://open.spotify.com/artist/3FjdJbt6Myq32uv7P4owM1?si=lXjKS589RKCnX8yziGjOfg" target="_blank" class="btn-spotify">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="20" alt="Spotify">
+            ESCUCHAR INVISIBLE EN PLATAFORMAS OFICIALES
+        </a>
+
+        <a href="https://open.spotify.com/intl-es/artist/1pS3667B7v6Uf6B8vjS16M" target="_blank" class="btn-spotify">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="20" alt="Spotify">
+            ESCUCHAR SPINETTA JADE EN PLATAFORMAS OFICIALES
+        </a>
+
+        <a href="https://open.spotify.com/artist/7F5m9Jw4sg853wTDmmJvLi?si=oXqNRNGTRl-gHiZGyo0O8w" target="_blank" class="btn-spotify">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="20" alt="Spotify">
+            ESCUCHAR SPINETTA Y LOS SOCIOS DEL DESIERTO
+        </a>
+
+        <a href="https://open.spotify.com/artist/1MuQ2m2tg7naeRGAOxYZer?si=jYx1r5wCS6qi7Z5T0-jH5A" target="_blank" class="btn-spotify">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="20" alt="Spotify">
+            ESCUCHAR SPINETTA EN PLATAFORMAS OFICIALES
+        </a>
     </div>
 </div>
 
