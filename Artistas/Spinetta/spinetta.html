@@ -5,64 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis Alberto Spinetta | El Rincón Inédito</title>
 <style>
-        /* --- Estilos para las tarjetas de navegación --- */
-        :root { --primary: #00ff88; --bg: #050505; --card-bg: #121212; --text: #e0e0e0; }
-        
-        body { background-color: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; padding: 0; }
+    /* --- Estilos unificados --- */
+    :root { --primary: #00ff88; --bg: #050505; --card-bg: #121212; --text: #e0e0e0; }
+    
+    body { background-color: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; padding: 0; }
 
-        /* Estilo base de las tarjetas */
-        .card-seccion {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #333;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            height: 100%; /* Para que todas midan lo mismo en la misma fila */
-            box-sizing: border-box;
-        }
+    /* Navegación unificada */
+    nav {
+        background: rgba(0,0,0,0.9);
+        padding: 10px 3%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid #333;
+    }
 
-        @media (hover: hover) {
-            .card-seccion:hover {
-                transform: translateY(-5px);
-                border-color: var(--primary) !important;
-                box-shadow: 0 10px 25px rgba(0, 255, 136, 0.15) !important;
-            }
-        }
+    /* Logo link */
+    .logo-container {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+        transition: opacity 0.2s;
+    }
+    .logo-container:hover { opacity: 0.8; }
 
-        .card-seccion:active {
-            transform: scale(0.97) translateY(0);
-            transition: all 0.1s ease;
-        }
+    /* Estilo base de las tarjetas */
+    .card-seccion {
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid #333;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        height: 100%;
+        box-sizing: border-box;
+    }
 
-        /* Layout */
-        .header-artista { text-align: center; padding: 40px 0; }
-        .foto-perfil { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--primary); object-fit: cover; }
-        .bio { max-width: 700px; margin: 20px auto; line-height: 1.6; color: #bbb; padding: 0 20px; }
-        
-        .grid-secciones { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 20px; 
-            max-width: 1000px; 
-            margin: 0 auto; 
+    @media (hover: hover) {
+        .card-seccion:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary) !important;
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.15) !important;
         }
+    }
+
+    /* Layout */
+    .header-artista { text-align: center; padding: 40px 0; }
+    .foto-perfil { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--primary); object-fit: cover; }
+    .bio { max-width: 700px; margin: 20px auto; line-height: 1.6; color: #bbb; padding: 0 20px; }
+    
+    .grid-secciones { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+        gap: 20px; 
+        max-width: 1000px; 
+        margin: 0 auto; 
+    }
 </style>
 </head>
 <body>
-    <nav style="background: rgba(0,0,0,0.9); padding: 10px 3%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333;">
-    <a href="../../index.html" style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;">
-        <span style="font-size: 1.5rem;">🎙️</span>
-        <div style="display: flex; flex-direction: column; line-height: 1;">
-            <span style="font-weight: 800; font-size: 1.1rem; color: white; letter-spacing: -0.5px;">EL RINCÓN</span>
-            <span style="font-weight: 800; font-size: 1.1rem; color: var(--primary); letter-spacing: -0.5px;">INÉDITO</span>
+    <nav>
+        <a href="../../index.html" class="logo-container">
+            <span style="font-size: 1.5rem;">🎙️</span>
+            <div style="display: flex; flex-direction: column; line-height: 1;">
+                <span style="font-weight: 800; font-size: 1.1rem; color: white; letter-spacing: -0.5px;">EL RINCÓN</span>
+                <span style="font-weight: 800; font-size: 1.1rem; color: var(--primary); letter-spacing: -0.5px;">INÉDITO</span>
+            </div>
+        </a>
+            
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <a href="../../artistas.html" style="color:white; text-decoration:none; font-size: 0.9rem; font-weight: 500;">Artistas</a>
+            <a href="../../index.html#subir" style="color:var(--primary); border: 1px solid var(--primary); padding: 4px 10px; border-radius: 6px; text-decoration:none; font-size: 0.85rem; font-weight: bold;">Subir</a>
         </div>
-    </a>
-        
-    <div style="display: flex; gap: 12px; align-items: center;">
-        <a href="../../artistas.html" style="color:white; text-decoration:none; margin-left:20px;">Artistas</a>
-        <a href="../../index.html#subir" style="color:var(--primary); border: 1px solid var(--primary); padding: 4px 8px; border-radius: 5px; text-decoration:none; font-size: 0.85rem; font-weight: bold;">Subir</a>
-    </div>
     </nav>
 
     <div class="header-artista">
