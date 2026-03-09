@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografía | Wos - El Rincón Inédito</title>
+    <style>
+        :root {
+            --primary: #00ff88;
+            --bg: #050505;
+            --card-bg: #121212;
+            --text: #e0e0e0;
+        }
 
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, sans-serif;
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header-bio {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header-bio h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo del Texto */
+        .bio-content {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .bio-content p {
+            margin-bottom: 20px;
+        }
+
+        /* Apartado Wikipedia */
+        .wiki-section {
+            margin-top: 60px;
+            padding: 30px;
+            background: #0a0a0a;
+            border: 1px solid #222;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .wiki-section h2 {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .btn-wiki {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-wiki:hover {
+            background: #444;
+            color: var(--primary);
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 40px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Volver al Inicio</a>
+
+        <div class="header-bio">
+            <h1>Valentín Oliva (Wos)</h1>
+            <p style="color: #666;">1998 - Presente</p>
+        </div>
+
+        <div class="bio-content">
+            <p>Valentín Oliva, conocido artísticamente como Wos, nació el 23 de enero de 1998 en Buenos Aires. Hijo de artistas, creció en un entorno donde la música y la actuación eran parte del día a día, lo que forjó su versatilidad para dominar tanto el escenario como la improvisación.</p>
+            
+            <p>Su camino comenzó en las plazas de la capital argentina, convirtiéndose en una figura central del Quinto Escalón, la competencia de freestyle más importante de la región. Allí destacó por su ingenio, su fuerza interpretativa y una capacidad de respuesta que lo llevó a ganar la Final Internacional de la Red Bull Batalla de los Gallos en 2018.</p>
+            
+            <p>A pesar de su éxito en las batallas, Wos decidió volcar toda esa energía en su carrera musical. En 2019 lanzó su álbum debut, "Caravana", que incluyó el éxito "Canguro", una canción que se convirtió en un himno generacional por su crítica social y su potencia lírica.</p>
+            
+            <p>A diferencia de otros artistas de su generación, Wos ha logrado tender un puente con la tradición del rock argentino. Sus colaboraciones con figuras como el Indio Solari o Ricardo Mollo, y su sonido que mezcla trap, hip hop y rock, lo posicionan como un heredero de la mística nacional, pero con un lenguaje moderno.</p>
+            
+            <p>Con trabajos como "Oscuro Éxtasis" y su más reciente "Descartable", ha cosechado numerosos Premios Gardel, incluyendo el Gardel de Oro. Su propuesta artística destaca por la profundidad de sus letras, la experimentación con instrumentos orgánicos y un despliegue escénico que lo ha llevado a llenar estadios en todo el país.</p>
+            
+            <p>Hoy, Wos es considerado uno de los artistas más influyentes de la escena actual, representando una voz auténtica que conecta la cultura urbana con la potencia del rock y la poesía social argentina.</p>
+        </div>
+
+        <div class="wiki-section">
+            <h2>¿Buscas información más técnica y extensa?</h2>
+            <p style="color: #555; margin-bottom: 20px;">Puedes consultar la entrada completa en la enciclopedia libre para detalles sobre su discografía completa, colaboraciones y reconocimientos.</p>
+            <a href="https://es.wikipedia.org/wiki/Wos_(p%C3%A1gina_de_desambiguaci%C3%B3n)" target="_blank" class="btn-wiki">
+                📖 Leer Biografía en Wikipedia
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
