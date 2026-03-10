@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/png" href="https://el-rincon-inedito.github.io/Imagenes/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Espacios Amados | Banda Spinetta - El Rincón Inédito</title>
+    <style>
+        :root {
+            --primary: #00ff88;
+            --bg: #050505;
+            --card-bg: #121212;
+            --text: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: bold; }
+
+        /* Encabezado y Portada */
+        .header-concierto { text-align: center; margin-bottom: 40px; }
+        .header-concierto h1 { color: var(--primary); font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; line-height: 1.2; }
+        .portada {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            margin-bottom: 30px;
+            border: 1px solid #333;
+        }
+
+        /* Información y Setlist */
+        .info-box { background: var(--card-bg); padding: 30px; border-radius: 15px; margin-bottom: 30px; border: 1px solid #222; }
+        .info-box h2 { color: var(--primary); font-size: 1.2rem; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px; text-transform: uppercase; }
+        
+        .setlist { list-style: none; padding: 0; }
+        .setlist li { 
+            padding: 10px 0; 
+            border-bottom: 1px solid #1a1a1a; 
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        /* Botón de Descarga */
+        .download-section { text-align: center; padding: 40px 0; border-top: 1px solid #222; }
+        .btn-download {
+            background: var(--primary);
+            color: black;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+        }
+        .btn-download:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+        }
+
+        .file-info { margin-top: 15px; color: #666; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="#" id="dynamic-back-link" class="back-link">← Volver</a>
+
+        <div class="header-concierto">
+            <h1>BANDA SPINETTA: <br> LOS ESPACIOS AMADOS</h1>
+            <p style="color: #888;">1977/1978 - Argentina</p>
+            <img src="../../Imagenes/Spinetta/Conciertos/banda-spinetta-los-espacios-amados-1977.jpg" alt="Banda Spinetta Los Espacios Amados" class="portada">
+        </div>
+
+        <div class="info-box">
+            <h2>Reseña Histórica</h2>
+            <p>
+                El material conocido como <strong>“Los Espacios Amados”</strong> corresponde a una serie de grabaciones en vivo de Luis Alberto Spinetta registradas principalmente entre 1977 y 1978, durante un período de transición posterior a Invisible. En esos años, Spinetta orientó su música hacia la fusión entre rock y jazz, con composiciones extensas y gran espacio para la improvisación.
+                <br><br>
+                Este repertorio formaba parte de un proyecto discográfico que nunca llegó a editarse oficialmente. Se trata de un compilado de grabaciones informales preservadas por aficionados, que capturan una faceta poco documentada del "Flaco", marcada por influencias del jazz-rock internacional y piezas que nunca fueron grabadas en estudio.
+                <br><br>
+                La portada de esta edición fue recreada con inteligencia artificial, buscando dar una identidad visual a este "álbum perdido" de la discografía no oficial.
+            </p>
+        </div>
+
+        <div class="info-box">
+            <h2>Set List (Compilado en Vivo)</h2>
+            <ul class="setlist">
+                <li>01. Covadonga</li>
+                <li>02. Estrella gris</li>
+                <li>03. A 18' del sol</li>
+                <li>04. Amor de primavera</li>
+                <li>05. Canción para los días de la vida</li>
+                <li>06. A estos hombres tristes</li>
+                <li>07. Los elefantes</li>
+                <li>08. Presentación de la banda</li>
+                <li>09. Las alas del grillo</li>
+                <li>10. Los espacios amados</li>
+                <li>11. Bahiana split</li>
+                <li>12. Tanino</li>
+                <li>13. Solos bahiana Split (bis)</li>
+            </ul>
+        </div>
+
+        <div class="download-section">
+            <a href="https://archive.org/download/banda-spinetta-los-espacios-amados-1977-mp-3-32/Banda%20Spinetta%20-%20Los%20Espacios%20Amados%20-%201977%28MP3_32.zip" class="btn-download" download>
+                ⬇️ DESCARGAR ÁLBUM INÉDITO (.ZIP)
+            </a>
+            <div class="file-info">
+                Formato: MP3 (Grabaciones de Aire) <br>
+                Servidor: Archive.org (Oficial)
+            </div>
+        </div>
+
+        <p style="text-align: center; color: #444; font-size: 0.8rem; margin-top: 50px;">
+            Material difundido con fines culturales y de preservación histórica.
+        </p>
+    </div>
+
+    <script>
+    window.onload = function() {
+        const backLink = document.getElementById('dynamic-back-link');
+        const referrer = document.referrer;
+
+        if (referrer.includes('conciertos-general.html') || referrer.includes('ineditos-general.html')) {
+            backLink.href = referrer;
+            backLink.innerHTML = "← Volver";
+        } 
+        else if (referrer !== "") {
+            backLink.href = referrer;
+            backLink.innerHTML = "← Volver";
+        } 
+        else {
+            backLink.href = "../../index.html";
+        }
+    };
+    </script>
+
+</body>
+</html>
+
