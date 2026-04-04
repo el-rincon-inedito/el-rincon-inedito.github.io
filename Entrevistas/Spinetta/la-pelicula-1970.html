@@ -1,1 +1,150 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/png" href="../../Imagenes/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Película" Almendra (1970) | El Rincón Inédito</title>
+    <style>
+        :root {
+            --primary: #00ff88;
+            --bg: #050505;
+            --card-bg: #121212;
+            --text: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 850px; margin: 0 auto; padding: 40px 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: bold; }
+
+        /* Encabezado */
+        .header-material { text-align: center; margin-bottom: 40px; }
+        .header-material h1 { color: var(--primary); font-size: 2rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+        .tag-audiovisual { 
+            background: rgba(0, 255, 136, 0.1); 
+            color: var(--primary); 
+            padding: 5px 15px; 
+            border-radius: 5px; 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            border: 1px solid var(--primary);
+        }
+
+        /* Video Embed */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.9);
+            margin-bottom: 40px;
+            border: 1px solid #333;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Información */
+        .info-box { background: var(--card-bg); padding: 35px; border-radius: 15px; margin-bottom: 30px; border: 1px solid #222; }
+        .info-box h2 { color: var(--primary); font-size: 1.3rem; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px; }
+        .info-box p { margin-bottom: 20px; text-align: justify; color: #ccc; }
+        
+        .creditos-lista { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .creditos-lista li { font-size: 0.9rem; color: #888; }
+        .creditos-lista b { color: var(--primary); }
+
+        /* Pie de página */
+        .footer-note { text-align: center; color: #444; font-size: 0.8rem; margin-top: 50px; border-top: 1px solid #1a1a1a; padding-top: 20px; }
+
+        @media (max-width: 600px) {
+            .creditos-lista { grid-template-columns: 1fr; }
+            .header-material h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="#" id="dynamic-back-link" class="back-link">← Volver</a>
+
+        <div class="header-material">
+            <span class="tag-audiovisual">Archivo Audiovisual Inédito</span>
+            <h1>"Película" Almendra (1970)</h1>
+            <p style="color: #888;">Dirigido por Alcira Luengas | Restauración Histórica</p>
+        </div>
+
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/mUp47qRURkc" 
+                title="Documental Almendra 1970" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="info-box">
+            <h2>Reseña Histórica y Documental</h2>
+            <p>Este valioso documento audiovisual constituye un hallazgo arqueológico fundamental para la reconstrucción de la génesis del rock argentino. El registro tiene su origen en diciembre de 1969, en el marco de la "Expo Túnel", un evento cultural organizado para celebrar la inauguración del Túnel Subfluvial que conecta las provincias de Santa Fe y Entre Ríos. Durante una semana de intensa actividad artística que congregó a figuras de la talla de Mercedes Sosa y el Gato Barbieri, un joven cuarteto llamado Almendra, que apenas comenzaba a promocionar su primer álbum de larga duración, capturó la atención de Alcira Luengas.</p>
+            
+            <p>La entonces estudiante de la prestigiosa Escuela de Cine de la Universidad Nacional del Litoral, dirigida por Fernando Birri, propuso a Luis Alberto Spinetta convertir a la banda en el eje central de su tesis cinematográfica. La producción de la película se desarrolló formalmente durante el año 1970, logrando capturar momentos de una intimidad y relevancia histórica sin precedentes.</p>
+            
+            <p>El material documental no solo incluye entrevistas profundas con los integrantes de Almendra, sino que también registra la presencia de figuras clave de la escena emergente de aquel momento, como Pappo, Pomo y Carlos Cutaia. Entre los fragmentos más destacados se encuentra la filmación del proceso de grabación de la canción “Aire de Amor” en los míticos estudios TNT, proporcionando una ventana única al método de trabajo de la banda en el estudio. Asimismo, el filme contiene el registro visual del primer concierto de despedida del grupo, realizado en el Teatro Pueyrredón del barrio de Flores, un evento que marcó el cierre de una etapa fundacional para la música nacional.</p>
+            
+            <p>La recuperación de este material es el resultado de un exhaustivo proceso de preservación y rescate llevado a cabo por la familia de Alcira Luengas. Tras el fallecimiento de la cineasta, los rollos originales fueron localizados y sometidos a un proceso de digitalización para asegurar su supervivencia y difusión. Este esfuerzo permite que, tras décadas de permanecer fuera del alcance del público, el material sea revalorizado como una pieza central del patrimonio cultural argentino.</p>
+        </div>
+
+        <div class="info-box">
+            <h2>Ficha Técnica</h2>
+            <ul class="creditos-lista">
+                <li><b>Dirección:</b> Alcira Luengas</li>
+                <li><b>Año de Producción:</b> 1970</li>
+                <li><b>Locaciones:</b> Santa Fe, TNT Studios, Flores</li>
+                <li><b>Formato Original:</b> 16mm</li>
+                <li><b>Restauración:</b> Familia Luengas</li>
+                <li><b>Protagonistas:</b> Almendra (Spinetta, Molinari, Del Guercio, García)</li>
+            </ul>
+        </div>
+
+        <p class="footer-note">
+            Material difundido con fines puramente culturales y de preservación histórica. <br>
+            Agradecimientos especiales a la familia Luengas por permitir el acceso a este tesoro del rock nacional.
+        </p>
+    </div>
+
+    <script>
+    window.onload = function() {
+        const backLink = document.getElementById('dynamic-back-link');
+        const referrer = document.referrer;
+
+        if (referrer.includes('conciertos-general.html') || referrer.includes('ineditos-general.html') || referrer.includes('spinetta-entrevistas.html')) {
+            backLink.href = referrer;
+            backLink.innerHTML = "← Volver";
+        } 
+        else if (referrer !== "") {
+            backLink.href = referrer;
+            backLink.innerHTML = "← Volver";
+        } 
+        else {
+            backLink.href = "../../index.html";
+        }
+    };
+    </script>
+    
+</body>
+</html>
