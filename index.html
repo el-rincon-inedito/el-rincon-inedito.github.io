@@ -16,8 +16,8 @@
 
     <style>
         html {
-    scroll-behavior: smooth; /* Hace que el movimiento sea fluido, no un salto brusco */
-    scroll-padding-top: 120px; /* Aquí le das el aire que necesita (ajusta el número a gusto) */
+            scroll-behavior: smooth; /* Hace que el movimiento sea fluido, no un salto brusco */
+            scroll-padding-top: 120px; /* Aquí le das el aire que necesita (ajusta el número a gusto) */
         }
         
         :root {
@@ -29,11 +29,11 @@
         }
 
         body {
-    background-color: var(--bg);
-    color: var(--text);
-    font-family: sans-serif; /* Cambiado para que sea igual a Spinetta */
-    margin: 0;
-    line-height: 1.6;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: sans-serif; /* Cambiado para que sea igual a Spinetta */
+            margin: 0;
+            line-height: 1.6;
         }
         
 
@@ -52,15 +52,23 @@
 
         .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); letter-spacing: -1px; }
 
-        /* Hero Section */
+        /* Hero Section con Imagen de Fondo y Degradado */
         .hero {
-            padding: 80px 5%;
+            padding: 150px 5% 100px 5%; /* Aumentado el padding superior para centrar contenido visualmente */
             text-align: center;
-            background: linear-gradient(to bottom, #1a1a1a, var(--bg));
+            /* Imagen de fondo */
+            background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.7), var(--bg)), url('Imagenes/fondo-index.jpg');
+            background-size: cover; /* Cubre todo el ancho */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat;
+            /* Asegura que el degradado superpuesto cubra todo el fondo */
+            position: relative;
         }
 
-        .hero h1 { font-size: 3.5rem; margin: 0; color: white; }
-        .hero p { font-size: 1.2rem; color: #888; max-width: 600px; margin: 10px auto; }
+        .hero h1 { font-size: 3.5rem; margin: 0; color: white; position: relative; z-index: 1; }
+        .hero p { font-size: 1.2rem; color: #ccc; max-width: 600px; margin: 15px auto; position: relative; z-index: 1; }
+        .hero .tag { position: relative; z-index: 1; } /* Asegura que la etiqueta esté sobre el degradado */
+        .hero .btn-main { position: relative; z-index: 1; } /* Asegura que el botón esté sobre el degradado */
 
         .btn-main {
             background: var(--primary);
@@ -71,70 +79,86 @@
             font-weight: bold;
             display: inline-block;
             margin-top: 20px;
+            transition: 0.3s;
+        }
+        
+        .btn-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
         }
 
         /* Secciones */
-        .section-title { padding: 0 5%; margin-top: 50px; border-left: 4px solid var(--primary); margin-left: 5%; }
+        .section-title { padding: 0 5%; margin-top: 60px; border-left: 4px solid var(--primary); margin-left: 5%; color: white; }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            padding: 20px 5%;
+            padding: 20px 5% 40px 5%;
         }
 
         .card {
             background: var(--card-bg);
             border-radius: 15px;
-            padding: 20px;
+            padding: 25px;
             border: 1px solid #222;
             transition: 0.3s;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        
+        .card h3 { color: white; margin-top: 10px; }
+        .card p { color: #aaa; font-size: 0.95rem; margin-bottom: 15px; flex-grow: 1; }
 
         .tag {
             background: #333;
             font-size: 0.7rem;
-            padding: 3px 8px;
+            padding: 4px 10px;
             border-radius: 4px;
             text-transform: uppercase;
             color: var(--primary);
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
         }
 
         /* Footer / Colaboración */
         .collab-box {
             background: var(--primary);
             color: black;
-            margin: 60px 5%;
-            padding: 40px;
+            margin: 80px 5% 60px 5%;
+            padding: 50px;
             border-radius: 20px;
             text-align: center;
         }
 
-        .collab-box h2 { margin-top: 0; }
+        .collab-box h2 { margin-top: 0; font-size: 2.2rem; }
+        .collab-box p { font-size: 1.1rem; max-width: 600px; margin: 15px auto 25px auto; }
 
-        footer { text-align: center; padding: 40px; color: #555; border-top: 1px solid #222; }
+        footer { text-align: center; padding: 40px; color: #666; border-top: 1px solid #222; font-size: 0.9rem; }
 
     </style>
 </head>
 <body>
 
     
-    <nav style="background: rgba(0,0,0,0.9); padding: 10px 3%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333;">
+    <nav>
     
-    <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 5px; flex-shrink: 0;">
-        <span style="font-size: 1.5rem;">🎙️</span>
-        <div style="display: flex; flex-direction: column; line-height: 1;">
-            <span style="font-weight: 800; font-size: 1.1rem; color: white; letter-spacing: -0.5px;">EL RINCÓN</span>
-            <span style="font-weight: 800; font-size: 1.1rem; color: var(--primary); letter-spacing: -0.5px;">INÉDITO</span>
+    <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+        <span style="font-size: 1.8rem;">🎙️</span>
+        <div style="display: flex; flex-direction: column; line-height: 1.1;">
+            <span style="font-weight: 800; font-size: 1.2rem; color: white; letter-spacing: -0.5px;">EL RINCÓN</span>
+            <span style="font-weight: 800; font-size: 1.2rem; color: var(--primary); letter-spacing: -0.5px;">INÉDITO</span>
         </div>
     </a>
     
-    <div style="display: flex; gap: 12px; align-items: center;">
-        <a href="artistas.html" style="color:white; text-decoration:none; margin-left:20px; font-size: 1rem;">Artistas</a>
-        <a href="#subir" style="color:var(--primary); border: 1px solid var(--primary); padding: 5px 10px; border-radius: 5px; text-decoration:none; font-size: 0.85rem; font-weight: bold; display: flex; align-items: center; justify-content: center; line-height: 1;">
+    <div style="display: flex; gap: 15px; align-items: center;">
+        <a href="artistas.html" style="color:white; text-decoration:none; font-size: 1rem; font-weight: 500;">Artistas</a>
+        <a href="#subir" style="color:var(--primary); border: 1px solid var(--primary); padding: 6px 15px; border-radius: 20px; text-decoration:none; font-size: 0.9rem; font-weight: bold; display: flex; align-items: center; justify-content: center; line-height: 1; transition: 0.3s;">
             Subir
         </a>
     </div>
@@ -151,37 +175,39 @@
 
         <h2 class="section-title" id="artista-principal">Artista Destacado</h2>
     <div class="grid">
-        <div class="card" onclick="location.href='Artistas/Spinetta/spinetta.html';" style="cursor: pointer;">
-            <span class="tag">Leyenda del Rock</span>
-            <h3>Luis Alberto Spinetta</h3>
-            <p>Explora el archivo más completo de grabaciones encontradas, ensayos acústicos y recitales de consola del "Flaco".</p>
-            <a href="Artistas/Spinetta/spinetta.html" style="color:var(--primary); text-decoration:none; font-weight:bold;">Ver catálogo →</a>
+        <div class="card" onclick="location.href='Artistas/Spinetta/spinetta.html';">
+            <div>
+                <span class="tag">Leyenda del Rock</span>
+                <h3>Luis Alberto Spinetta</h3>
+                <p>Explora el archivo más completo de grabaciones encontradas, ensayos acústicos y recitales de consola del "Flaco".</p>
+            </div>
+            <a href="Artistas/Spinetta/spinetta.html" style="color:var(--primary); text-decoration:none; font-weight:bold; margin-top: auto;">Ver catálogo →</a>
         </div>
     </div>
 
 
     <h2 class="section-title">Categorías</h2>
     <div class="grid">
-        <div class="card">
-            <a href="ineditos-general.html" style="text-decoration: none; color: inherit; display: block;">
-            <h3>📼 Demos & Inéditos</h3>
-            <p>Primeras tomas y material no publicado oficialmente.</p>
-           <span style="color:var(--primary); text-decoration:none; font-weight:bold;">Ver →</span>
+        <div class="card" onclick="location.href='ineditos-general.html';">
+            <div>
+                <h3>📼 Demos & Inéditos</h3>
+                <p>Primeras tomas y material no publicado oficialmente.</p>
+            </div>
+           <span style="color:var(--primary); text-decoration:none; font-weight:bold; margin-top: auto;">Ver →</span>
+        </div>
+        <div class="card" onclick="location.href='archivo-general.html';">
+            <div>
+                <h3>🎸Recitales Completos</h3>
+                <p>Grabaciones de consola y aire de todas las épocas del rock nacional.</p>
+            </div>
+            <span style="color:var(--primary); text-decoration:none; font-weight:bold; margin-top: auto;">Ver →</span>
         </div>
         <div class="card">
-        <a href="archivo-general.html" style="text-decoration: none; color: inherit; display: block;">
-    <div class="servicio-card" style="cursor: pointer;">
-        <h3>🎸Recitales Completos</h3>
-        <p>Grabaciones de consola y aire de todas las épocas del rock nacional.</p>
-        <span style="color:var(--primary); text-decoration:none; font-weight:bold;">Ver →</span>
-    </div>
-        </a>
-            
-        </div>
-        <div class="card">
-            <h3>❓ Rarezas</h3>
-            <p>Entrevistas perdidas y versiones alternativas.</p>
-            <span style="color:var(--primary); text-decoration:none; font-weight:bold;">(Próximamente)</span>
+            <div>
+                <h3>❓ Rarezas</h3>
+                <p>Entrevistas perdidas y versiones alternativas.</p>
+            </div>
+            <span style="color:var(--primary); text-decoration:none; font-weight:bold; margin-top: auto;">(Próximamente)</span>
         </div>
     </div>
 
@@ -190,41 +216,43 @@
         <p>Ayúdanos a preservar la historia musical. Si tienes grabaciones propias o archivos raros, compártelos con la comunidad.</p>
         <a href="https://www.instagram.com/elrinconinedito?igsh=ODFpb2dpYjhqYWdi" class="btn-main" style="background: black; color: white;">Contactar Archivero</a>
     </section>
-    <section id="donaciones" style="padding: 60px 5%; background: #0a0a0a; text-align: center; border-top: 1px solid #222;">
-    <h2 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 15px;">Apoya el Proyecto</h2>
-    <p style="color: #888; max-width: 500px; margin: 0 auto 30px auto; font-size: 0.95rem;">
-        Este es un archivo sin fines de lucro. Tu ayuda es fundamental para cubrir los costos de almacenamiento y seguir rescatando material inédito.
+    
+    <section id="donaciones" style="padding: 80px 5%; background: #0a0a0a; text-align: center; border-top: 1px solid #222;">
+    <h2 style="color: white; font-size: 2.2rem; margin-bottom: 15px;">Apoya el Proyecto</h2>
+    <p style="color: #aaa; max-width: 500px; margin: 0 auto 40px auto; font-size: 1rem; line-height: 1.7;">
+        Este es un archivo comunitario sin fines de lucro. Tu ayuda es fundamental para cubrir los costos de alojamiento y seguir rescatando material inédito.
     </p>
 
-    <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
         
         <a href="https://cafecito.app/el-rincon-inedito1" target="_blank" 
-           style="width: 100%; max-width: 300px; background: #00bfff; color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px;">
+           style="width: 100%; max-width: 320px; background: #00bfff; color: white; text-decoration: none; padding: 15px; border-radius: 10px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.1rem; transition: 0.3s; box-shadow: 0 4px 10px rgba(0, 191, 255, 0.2);">
             ☕ Cafecito (Argentina)
         </a>
 
         <a href="https://www.paypal.me/MiltonCaballieri" target="_blank" 
-           style="width: 100%; max-width: 300px; background: #ffc439; color: #003087; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px;">
+           style="width: 100%; max-width: 320px; background: #ffc439; color: #003087; text-decoration: none; padding: 15px; border-radius: 10px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.1rem; transition: 0.3s; box-shadow: 0 4px 10px rgba(255, 196, 57, 0.2);">
             💳 PayPal (International)
         </a>
 
     </div>
 
-    <p style="margin-top: 25px; font-size: 0.75rem; color: #444; letter-spacing: 1px;">
+    <p style="margin-top: 40px; font-size: 0.8rem; color: #555; letter-spacing: 2px; text-transform: uppercase;">
         GRACIAS POR AYUDAR A PRESERVAR LA HISTORIA
     </p>
     </section>
-    <section style="padding: 40px 5%; background: #0c0c0c; border-top: 1px solid #222; text-align: center;">
-    <h3 style="color: #666; font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">Reconocimientos</h3>
     
-    <div style="max-width: 800px; margin: 0 auto; border: 1px dashed #444; padding: 25px; border-radius: 15px;">
-        <p style="color: #aaa; font-style: italic; line-height: 1.7;">
+    <section style="padding: 60px 5%; background: #0c0c0c; border-top: 1px solid #222; text-align: center;">
+    <h3 style="color: #888; font-size: 1.3rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px;">Reconocimientos</h3>
+    
+    <div style="max-width: 850px; margin: 0 auto; border: 1px dashed #444; padding: 30px; border-radius: 15px; background: rgba(255,255,255,0.02);">
+        <p style="color: #bbb; font-style: italic; line-height: 1.8; font-size: 1rem;">
             "Gran parte del material sonoro de este archivo proviene de la invaluable labor de recopilación de <strong>[spinettabootlegs]</strong>. 
             Nuestra misión es complementar su trabajo: tomamos esos fragmentos históricos para catalogarlos, mejorar su presentación visual y organizar las pistas individualmente para una mejor experiencia de escucha."
         </p>
         
-        <a href="http://www.spinettabootlegs.com.ar/" target="_blank" style="display: inline-block; margin-top: 15px; color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.9rem;">
-            🌐 Visitar sitio
+        <a href="http://www.spinettabootlegs.com.ar/" target="_blank" style="display: inline-block; margin-top: 20px; color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.95rem; border-bottom: 1px solid transparent; transition: 0.3s;">
+            🌐 Visitar sitio web oficial
         </a>
     </div>
     </section>
