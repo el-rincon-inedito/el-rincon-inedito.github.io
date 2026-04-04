@@ -6,12 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis Alberto Spinetta | El Rincón Inédito</title>
 <style>
-    /* --- Estilos unificados --- */
-    :root { --primary: #00ff88; --bg: #050505; --card-bg: #121212; --text: #e0e0e0; }
+    /* --- Variables y Estilos Base --- */
+    :root { 
+        --primary: #00ff88; 
+        --bg: #050505; 
+        --card-bg: #121212; 
+        --text: #e0e0e0; 
+    }
     
-    body { background-color: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; padding: 0; }
+    body { 
+        background-color: var(--bg); 
+        color: var(--text); 
+        font-family: sans-serif; 
+        margin: 0; 
+        padding: 0; 
+        line-height: 1.6;
+    }
 
-    /* Navegación unificada */
+    /* --- Navegación Unificada con Index --- */
     nav {
         background: rgba(0,0,0,0.9);
         padding: 10px 3%;
@@ -24,68 +36,108 @@
         border-bottom: 1px solid #333;
     }
 
-    /* Logo link */
-    .logo-container {
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 8px;
+    .nav-logo {
+        text-decoration: none; 
+        display: flex; 
+        align-items: center; 
+        gap: 8px; 
         flex-shrink: 0;
-        transition: opacity 0.2s;
+        transition: 0.3s;
     }
-    .logo-container:hover { opacity: 0.8; }
+    .nav-logo:hover { opacity: 0.8; }
 
-    /* Estilo base de las tarjetas */
+    .nav-logo-text {
+        display: flex; 
+        flex-direction: column; 
+        line-height: 1.1;
+    }
+
+    .btn-subir-nav {
+        color: var(--primary); 
+        border: 1px solid var(--primary); 
+        padding: 6px 15px; 
+        border-radius: 20px; 
+        text-decoration: none; 
+        font-size: 0.9rem; 
+        font-weight: bold; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        line-height: 1; 
+        transition: 0.3s;
+    }
+    .btn-subir-nav:hover {
+        background: var(--primary);
+        color: black;
+    }
+
+    /* --- Layout Artista --- */
+    .header-artista { 
+        text-align: center; 
+        padding: 60px 5% 40px 5%; 
+        background: linear-gradient(to bottom, #111, var(--bg));
+    }
+    .foto-perfil { 
+        width: 160px; 
+        height: 160px; 
+        border-radius: 50%; 
+        border: 3px solid var(--primary); 
+        object-fit: cover; 
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+    }
+    .header-artista h1 { font-size: 2.5rem; color: white; margin: 20px 0 10px 0; }
+    .bio { max-width: 700px; margin: 0 auto; color: #bbb; font-size: 1.05rem; }
+
+    /* --- Grid de Secciones --- */
+    .grid-secciones { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        gap: 25px; 
+        max-width: 1100px; 
+        margin: 0 auto; 
+        padding: 20px 5% 60px 5%;
+    }
+
     .card-seccion {
         background: var(--card-bg);
-        padding: 30px;
+        padding: 35px 25px;
         border-radius: 15px;
-        border: 1px solid #333;
+        border: 1px solid #222;
         transition: all 0.3s ease;
-        cursor: pointer;
+        text-align: center;
         height: 100%;
         box-sizing: border-box;
     }
 
-    @media (hover: hover) {
-        .card-seccion:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary) !important;
-            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.15) !important;
-        }
+    .card-seccion:hover {
+        transform: translateY(-8px);
+        border-color: var(--primary);
+        box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
     }
 
-    /* Layout */
-    .header-artista { text-align: center; padding: 40px 0; }
-    .foto-perfil { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--primary); object-fit: cover; }
-    .bio { max-width: 700px; margin: 20px auto; line-height: 1.6; color: #bbb; padding: 0 20px; }
-    
-    .grid-secciones { 
-        display: grid; 
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-        gap: 20px; 
-        max-width: 1000px; 
-        margin: 0 auto; 
-    }
+    .card-seccion span { font-size: 2.8rem; display: block; margin-bottom: 15px; }
+    .card-seccion h3 { color: white; margin: 0 0 10px 0; font-size: 1.4rem; }
+    .card-seccion p { color: #888; font-size: 0.95rem; margin: 0; }
+
+    footer { text-align: center; padding: 40px; color: #555; border-top: 1px solid #222; font-size: 0.9rem; }
 </style>
 </head>
 <body>
-   <nav style="background: rgba(0,0,0,0.9); padding: 10px 3%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333;">
-    
-    <a href="../../index.html" style="text-decoration: none; display: flex; align-items: center; gap: 5px; flex-shrink: 0;">
-        <span style="font-size: 1.5rem;">🎙️</span>
-        <div style="display: flex; flex-direction: column; line-height: 1;">
-            <span style="font-weight: 800; font-size: 1.1rem; color: white; letter-spacing: -0.5px;">EL RINCÓN</span>
-            <span style="font-weight: 800; font-size: 1.1rem; color: var(--primary); letter-spacing: -0.5px;">INÉDITO</span>
+
+   <nav>
+    <a href="../../index.html" class="nav-logo">
+        <span style="font-size: 1.8rem;">🎙️</span>
+        <div class="nav-logo-text">
+            <span style="font-weight: 800; font-size: 1.2rem; color: white; letter-spacing: -0.5px;">EL RINCÓN</span>
+            <span style="font-weight: 800; font-size: 1.2rem; color: var(--primary); letter-spacing: -0.5px;">INÉDITO</span>
         </div>
     </a>
     
-    <div style="display: flex; gap: 12px; align-items: center;">
-        <a href="../../artistas.html" style="color:white; text-decoration:none; margin-left:20px; font-size: 1rem;">Artistas</a>
-        <a href="../../index.html#subir" style="color:var(--primary); border: 1px solid var(--primary); padding: 4px 8px; border-radius: 5px; text-decoration:none; font-size: 0.85rem; font-weight: bold;">Subir</a>
+    <div style="display: flex; gap: 15px; align-items: center;">
+        <a href="../../artistas.html" style="color:white; text-decoration:none; font-size: 1rem; font-weight: 500;">Artistas</a>
+        <a href="../../index.html#subir" class="btn-subir-nav">Subir</a>
     </div>
    </nav>
-    
 
     <div class="header-artista">
         <img src="../../Imagenes/Spinetta/perfil-spinetta.jpg" class="foto-perfil" alt="Luis Alberto Spinetta">
@@ -93,52 +145,57 @@
         <p class="bio">Poeta, músico y guía de la música argentina. Aquí recopilamos grabaciones de consola, ensayos privados y momentos que el tiempo intentó ocultar.</p>
     </div>
 
-    <section style="padding: 40px 5%; text-align: center;">
-        <h2 style="color: var(--primary); margin-bottom: 30px; font-size: 2rem; letter-spacing: 2px;">SECCIONES</h2>
+    <section style="background-color: var(--bg);">
+        <h2 style="color: var(--primary); text-align: center; margin-bottom: 40px; font-size: 1.8rem; letter-spacing: 2px; text-transform: uppercase;">Secciones</h2>
         
         <div class="grid-secciones">
             
             <a href="spinetta-bio.html" style="text-decoration: none;">
                 <div class="card-seccion">
-                    <span style="font-size: 2.5rem;">📖</span>
-                    <h3 style="color: white; margin-top: 15px;">Biografía</h3>
-                    <p style="color: #888; font-size: 0.9rem;">Vida y obra del Flaco.</p>
+                    <span>📖</span>
+                    <h3>Biografía</h3>
+                    <p>Vida y obra del Flaco a través del tiempo.</p>
                 </div>
             </a>
 
             <a href="spinetta-discos.html" style="text-decoration: none;">
                 <div class="card-seccion">
-                    <span style="font-size: 2.5rem;">💿</span>
-                    <h3 style="color: white; margin-top: 15px;">Discografía</h3>
-                    <p style="color: #888; font-size: 0.9rem;">Álbumes oficiales y raros.</p>
+                    <span>💿</span>
+                    <h3>Discografía</h3>
+                    <p>Explora álbumes oficiales y ediciones raras.</p>
                 </div>
             </a>
 
             <a href="spinetta-conciertos.html" style="text-decoration: none;">
-    <div class="card-seccion">
-        <span style="font-size: 2.5rem;">🎸</span>
-        <h3 style="color: white; margin-top: 15px;">Conciertos</h3>
-        <p style="color: #888; font-size: 0.9rem;">Grabaciones inéditas en vivo.</p>
-    </div>
-</a>
+                <div class="card-seccion">
+                    <span>🎸</span>
+                    <h3>Conciertos</h3>
+                    <p>Registros en vivo y grabaciones de consola.</p>
+                </div>
+            </a>
 
             <a href="spinetta-entrevistas.html" style="text-decoration: none;">
                 <div class="card-seccion">
-                    <span style="font-size: 2.5rem;">🎙️</span>
-                    <h3 style="color: white; margin-top: 15px;">Entrevistas</h3>
-                    <p style="color: #888; font-size: 0.9rem;">Charlas, radio y televisión.</p>
+                    <span>🎙️</span>
+                    <h3>Entrevistas</h3>
+                    <p>Charlas, radio y archivos de televisión.</p>
                 </div>
             </a>
 
             <a href="spinetta-ineditos.html" style="text-decoration: none;">
                 <div class="card-seccion">
-                    <span style="font-size: 2.5rem;">📂</span>
-                    <h3 style="color: white; margin-top: 15px;">Inéditos</h3>
-                    <p style="color: #888; font-size: 0.9rem;">Canciones y material que no llegó a publicarse.</p>
+                    <span>📂</span>
+                    <h3>Inéditos</h3>
+                    <p>Canciones y tesoros que nunca vieron la luz.</p>
                 </div>
             </a>
 
         </div>
     </section>
+
+    <footer>
+        <p>&copy; 2026 El Rincón Inédito | Milton Caballieri. Preservando el legado musical.</p>
+    </footer>
+
 </body>
 </html>
