@@ -152,6 +152,35 @@
         }
     };
     </script>
+    <script>
+window.onload = function() {
+    const backLink = document.getElementById('dynamic-back-link');
+    const referrer = document.referrer;
+
+    // Si hay un historial previo (el usuario no entró directo por un link)
+    if (referrer !== "") {
+        backLink.href = "javascript:history.back()";
+        
+        // Opcional: Personalizar el texto según de dónde viene de forma automática
+        if (referrer.includes('spinetta')) {
+            backLink.innerHTML = "← Volver a Spinetta";
+        } else if (referrer.includes('aznar')) {
+            backLink.innerHTML = "← Volver a Pedro Aznar";
+        } else if (referrer.includes('general')) {
+            backLink.innerHTML = "← Volver al Archivo";
+        } else {
+            backLink.innerHTML = "← Volver";
+        }
+    } 
+    // Si entró directo (ej: pegó el link en la barra), lo mandamos al inicio del sitio
+    else {
+        backLink.href = "../../index.html";
+        backLink.innerHTML = "← Ir al Inicio";
+    }
+};
+    </script>
     
 </body>
+    
+    
 </html>
