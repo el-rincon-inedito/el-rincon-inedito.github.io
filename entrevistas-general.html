@@ -19,10 +19,9 @@
         body {
             background-color: var(--bg);
             color: var(--text);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding-bottom: 50px;
-            -webkit-font-smoothing: antialiased;
         }
 
         .container {
@@ -37,27 +36,25 @@
             color: var(--primary);
             text-decoration: none;
             font-weight: bold;
-            font-size: 1rem;
             transition: 0.3s;
         }
-        .back-link:hover { color: white; transform: translateX(-3px); }
 
-        .header { text-align: center; margin-bottom: 30px; }
+        .header { text-align: center; margin-bottom: 40px; }
         .header h1 {
             color: var(--primary);
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 12px; /* Más espacio bajo el título */
             font-size: 2rem;
         }
-        .header p { color: #888; font-size: 0.95rem; max-width: 600px; margin: 0 auto; }
+        .header p { color: #888; font-size: 1rem; line-height: 1.5; max-width: 600px; margin: 0 auto; }
 
         /* BUSCADOR */
         .search-container {
             width: 100%;
             display: flex;
             justify-content: center;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
         }
 
         #entrevistaSearch {
@@ -70,52 +67,43 @@
             color: white;
             font-size: 1rem;
             outline: none;
-            transition: 0.3s;
         }
 
-        #entrevistaSearch:focus {
-            border-color: var(--primary);
-            background: #1c1c1c;
-        }
+        /* LISTA Y TARJETAS */
+        .entrevistas-list { display: flex; flex-direction: column; gap: 25px; }
 
-        /* LISTA */
-        .entrevistas-list { display: flex; flex-direction: column; gap: 20px; }
-
-        .entrevista-card {
+        .card-material {
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 18px;
             padding: 25px;
-            transition: 0.3s ease;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px; /* Espacio uniforme entre bloques de texto */
             text-align: center;
+            transition: 0.3s;
         }
 
-        .entrevista-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        /* FECHA / MEDIO */
-        .date-box {
-            border-bottom: 1px solid #333;
+        /* CAJA DE TIPO/AÑO */
+        .type-box {
+            border-bottom: 1px solid #222;
             padding-bottom: 15px;
         }
-        .date-box .year { display: block; font-size: 2.2rem; font-weight: 900; color: var(--primary); line-height: 1; }
-        .date-box .medium { display: block; font-size: 0.9rem; color: #666; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+        .type-box .year { display: block; font-size: 2.2rem; font-weight: 900; color: var(--primary); line-height: 1; }
+        .type-box .format { display: block; font-size: 0.9rem; color: #666; margin-top: 8px; text-transform: uppercase; letter-spacing: 2px; }
 
-        .info-box h3 { margin: 0 0 6px 0; color: white; font-size: 1.3rem; }
-        .info-box p { margin: 0 0 12px 0; color: #aaa; font-size: 0.95rem; }
+        /* INFO BOX */
+        .info-box h3 { color: white; font-size: 1.4rem; margin-bottom: 10px; }
+        .info-box p { color: #aaa; font-size: 1rem; line-height: 1.6; margin-bottom: 15px; }
 
-        .type-tag {
+        .tag-material {
             display: inline-block;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: 6px;
-            border: 1px solid;
+            border: 1px solid var(--primary);
+            color: var(--primary);
             font-weight: 800;
         }
 
@@ -123,34 +111,29 @@
             background: transparent;
             border: 1px solid var(--primary);
             color: var(--primary);
-            padding: 14px 30px;
-            border-radius: 10px;
+            padding: 15px 30px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1rem;
-            width: 100%;
-            text-align: center;
-            transition: 0.2s;
+            display: block;
+            transition: 0.3s;
         }
 
-        .btn-ver:hover {
-            background: var(--primary);
-            color: black;
-        }
+        .btn-ver:hover { background: var(--primary); color: black; }
 
+        /* AJUSTES PC */
         @media (min-width: 768px) {
-            .entrevista-card {
+            .card-material {
                 flex-direction: row;
                 display: grid;
-                grid-template-columns: 140px 1fr 180px;
+                grid-template-columns: 140px 1fr 200px;
                 text-align: left;
                 align-items: center;
                 gap: 0;
             }
-            .date-box { border-bottom: none; border-right: 1px solid #333; padding: 0 20px 0 0; text-align: center; }
-            .info-box { padding: 0 30px; }
+            .type-box { border-bottom: none; border-right: 1px solid #222; padding: 0 20px 0 0; text-align: center; }
+            .info-box { padding: 0 40px; }
             .action-box { text-align: right; }
-            .btn-ver { width: auto; }
         }
     </style>
 </head>
@@ -161,57 +144,42 @@
 
     <div class="header">
         <h1>Archivo de Entrevistas</h1>
-        <p>Testimonios, reflexiones y charlas históricas recuperadas de radio, TV y prensa gráfica.</p>
+        <p>Documentos, mediometrajes y charlas históricas recuperadas.</p>
     </div>
 
     <div class="search-container">
-        <input type="text" id="entrevistaSearch" placeholder="Buscar por artista, medio o año..." onkeyup="filterEntrevistas()">
+        <input type="text" id="entrevistaSearch" placeholder="Buscar por año o contenido..." onkeyup="filterEntrevistas()">
     </div>
 
     <div class="entrevistas-list" id="listaEntrevistas">
 
-        <div class="entrevista-card" data-search="spinetta luis alberto radio mitre 1986 prive entrevista lalo mir">
-            <div class="date-box">
-                <span class="year">1986</span>
-                <span class="medium">Radio Mitre</span>
+        <div class="card-material" data-search="1969 todos a la vez rca victor pop rock nacional spinetta almendra">
+            <div class="type-box">
+                <span class="year">1969</span>
+                <span class="format">Cine</span>
             </div>
             <div class="info-box">
-                <h3>Spinetta: La etapa de Privé</h3>
-                <p>Charla profunda sobre el uso de máquinas de ritmo y la tecnología en la composición.</p>
-                <span class="type-tag" style="color: #00ff88; border-color: #00ff88;">Audio de Radio</span>
+                <h3>"Todos a la vez" (1969)</h3>
+                <p>Mediometraje promocional de RCA Víctor. Un documento híbrido que une el pop comercial con el nacimiento del rock nacional.</p>
+                <span class="tag-material">Rescate Audiovisual</span>
             </div>
             <div class="action-box">
-                <a href="Entrevistas/spinetta-mitre-86.html" class="btn-ver">Escuchar / Leer</a>
+                <a href="../../Entrevistas/Spinetta/todos-ala-vez-1969.html" class="btn-ver">Ver Mediometraje</a>
             </div>
         </div>
 
-        <div class="entrevista-card" data-search="pedro aznar seru giran revista pelo 1979 bajo fretless pastorius">
-            <div class="date-box">
-                <span class="year">1979</span>
-                <span class="medium">Revista Pelo</span>
+        <div class="card-material" data-search="1970 pelicula almendra alcira luengas documental spinetta">
+            <div class="type-box">
+                <span class="year">1970</span>
+                <span class="format">Cine</span>
             </div>
             <div class="info-box">
-                <h3>Aznar: El joven prodigio</h3>
-                <p>Pedro analiza su técnica en el bajo fretless durante los inicios de Serú Girán.</p>
-                <span class="type-tag" style="color: #3399ff; border-color: #3399ff;">Prensa Gráfica</span>
+                <h3>"Película" Almendra (1970)</h3>
+                <p>Documental inédito dirigido por Alcira Luengas. Captura la intimidad de la banda en su apogeo y su separación.</p>
+                <span class="tag-material">Archivo Audiovisual</span>
             </div>
             <div class="action-box">
-                <a href="Entrevistas/aznar-pelo-79.html" class="btn-ver">Leer Artículo</a>
-            </div>
-        </div>
-
-        <div class="entrevista-card" data-search="spinetta badia y compañia 1984 jade madre en años luz tv">
-            <div class="date-box">
-                <span class="year">1984</span>
-                <span class="medium">Canal 9</span>
-            </div>
-            <div class="info-box">
-                <h3>Badía y Compañía</h3>
-                <p>Mítica entrevista y set en vivo presentando el último disco de Spinetta Jade.</p>
-                <span class="type-tag" style="color: #ff4d4d; border-color: #ff4d4d;">Registro TV</span>
-            </div>
-            <div class="action-box">
-                <a href="Entrevistas/spinetta-badia-84.html" class="btn-ver">Ver Video</a>
+                <a href="../../Entrevistas/Spinetta/la-pelicula-1970.html" class="btn-ver">Ver Documental</a>
             </div>
         </div>
 
@@ -222,7 +190,7 @@
     function filterEntrevistas() {
         let input = document.getElementById('entrevistaSearch').value.toLowerCase();
         let listContainer = document.getElementById('listaEntrevistas');
-        let cards = listContainer.getElementsByClassName('entrevista-card');
+        let cards = listContainer.getElementsByClassName('card-material');
 
         for (let i = 0; i < cards.length; i++) {
             let filterData = cards[i].getAttribute('data-search');
@@ -237,4 +205,3 @@
 
 </body>
 </html>
-
