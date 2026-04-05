@@ -125,26 +125,33 @@
     </div>
 
         <script>
-    window.onload = function() {
-        const backLink = document.getElementById('dynamic-back-link');
-        const referrer = document.referrer; // Aquí guardamos de qué página viene el usuario
+window.onload = function() {
+    const backLink = document.getElementById('dynamic-back-link');
+    const referrer = document.referrer;
 
-        // Si el usuario viene de una página que contiene "general" en la URL
-        if (referrer.includes('conciertos-general.html') || referrer.includes('ineditos-general.html')) {
-            backLink.href = referrer; // Lo devuelve a la sección general exacta
+    // 1. Verificamos si hay un origen y si ese origen NO contiene la palabra 'youtube'
+    if (referrer !== "" && !referrer.includes('youtube.com')) {
+        
+        backLink.href = "javascript:history.back()";
+        
+        // Personalización del texto según la URL de origen
+        if (referrer.includes('spinetta')) {
+            backLink.innerHTML = "← Volver a Spinetta";
+        } else if (referrer.includes('general')) {
+            backLink.innerHTML = "← Volver al Archivo";
+        } else {
             backLink.innerHTML = "← Volver";
-        } 
-        // Si no viene de una sección general, asumimos que viene de la página del artista
-        else if (referrer !== "") {
-            backLink.href = referrer;
-            backLink.innerHTML = "← Volver";
-        } 
-        // Si entró directo por un link compartido (sin historial), lo mandamos al index por seguridad
-        else {
-            backLink.href = "../../index.html";
         }
-    };
-    </script>
+    } 
+    // 2. Si viene de YouTube o si entró directo (sin historial)
+    else {
+        // Ajustamos la ruta para que siempre lo mande al index de tu web
+        backLink.href = "../../index.html"; 
+        backLink.innerHTML = "← Ir al Inicio";
+    }
+};
+        </script>
+    
     
 
 </body>
