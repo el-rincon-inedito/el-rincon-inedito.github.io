@@ -131,8 +131,13 @@
         const backLink = document.getElementById('dynamic-back-link');
         const referrer = document.referrer;
 
-        if (referrer !== "" && (referrer.includes('artistas.html') || referrer.includes('index.html'))) {
+        if (referrer.includes('entrevistas-general.html') || referrer.includes('ineditos-general.html') || referrer.includes('spinetta-entrevistas.html')) {
             backLink.href = referrer;
+            backLink.innerHTML = "← Volver";
+        } 
+        else if (referrer !== "") {
+            backLink.href = referrer;
+            backLink.innerHTML = "← Volver";
         } 
         else {
             backLink.href = "../../index.html";
