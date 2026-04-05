@@ -128,23 +128,40 @@
     </div>
 
     <script>
-    window.onload = function() {
-        const backLink = document.getElementById('dynamic-back-link');
-        const referrer = document.referrer;
-
-        if (referrer.includes('entrevistas-general.html') || referrer.includes('ineditos-general.html') || referrer.includes('spinetta-entrevistas.html')) {
-            backLink.href = referrer;
-            backLink.innerHTML = "← Volver";
+window.onload = function() {
+    const backLink = document.getElementById('dynamic-back-link');
+    const referrer = document.referrer;
+    
+    // 1. Verificamos que exista un origen y que NO sea YouTube para no salir del sitio
+    if (referrer !== "" && !referrer.includes('youtube.com')) {
+        
+        // Usamos el historial para que el usuario mantenga su posición (scroll)
+        backLink.href = "javascript:history.back()";
+        
+        // 2. Personalización inteligente del texto según la URL de origen
+        if (referrer.includes('spinetta-entrevistas.html')) {
+            backLink.innerHTML = "← Volver a Entrevistas Spinetta";
         } 
-        else if (referrer !== "") {
-            backLink.href = referrer;
-            backLink.innerHTML = "← Volver";
+        else if (referrer.includes('entrevistas-general.html')) {
+            backLink.innerHTML = "← Volver al Archivo General";
+        } 
+        else if (referrer.includes('index.html')) {
+            backLink.innerHTML = "← Volver al Inicio";
         } 
         else {
-            backLink.href = "../../index.html";
+            // Si viene de cualquier otra página interna
+            backLink.innerHTML = "← Volver";
         }
-    };
+    } 
+    // 3. Si entró directo, viene de Google o de YouTube
+    else {
+        // Por seguridad, lo mandamos al inicio del sitio
+        backLink.href = "../../index.html"; 
+        backLink.innerHTML = "← Ir al Inicio";
+    }
+};
     </script>
+    
     
 </body>
 </html>
