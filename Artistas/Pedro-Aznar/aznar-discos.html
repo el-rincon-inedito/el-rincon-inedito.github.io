@@ -1,1 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/png" href="../../Imagenes/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discografía Completa | Pedro Aznar - El Rincón Inédito</title>
+    <style>
+        :root {
+            --primary: #00ff88;
+            --bg: #050505;
+            --card-bg: #121212;
+            --text: #e0e0e0;
+            /* Colores por Etapa de Aznar */
+            --c-seru: #3399ff;
+            --c-pat: #cc66ff;
+            --c-solista: #00ff88;
+            --c-tango: #ff4d4d;
+            --c-bandas: #ffcc00;
+            --c-especial: #ffffff;
+        }
+
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding-bottom: 50px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: bold; }
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { color: var(--primary); letter-spacing: 3px; text-transform: uppercase; }
+
+        /* Grilla */
+        .chrono-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .album-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #222;
+            transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .album-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+
+        .year-tag { font-size: 1.1rem; font-weight: bold; color: #555; margin-bottom: 8px; }
+        .album-name { color: white; font-size: 1rem; font-weight: bold; margin-bottom: 12px; min-height: 2.4rem; line-height: 1.3; }
+
+        /* Etiquetas */
+        .band-label {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid transparent;
+        }
+
+        .tag-seru { color: var(--c-seru); border-color: var(--c-seru); background: rgba(51, 153, 255, 0.05); }
+        .tag-pat { color: var(--c-pat); border-color: var(--c-pat); background: rgba(204, 102, 255, 0.05); }
+        .tag-solista { color: var(--c-solista); border-color: var(--c-solista); background: rgba(0, 255, 136, 0.05); }
+        .tag-tango { color: var(--c-tango); border-color: var(--c-tango); background: rgba(255, 77, 77, 0.05); }
+        .tag-bandas { color: var(--c-bandas); border-color: var(--c-bandas); background: rgba(255, 204, 0, 0.05); }
+        .tag-especial { color: var(--c-especial); border-color: var(--c-especial); background: rgba(255, 255, 255, 0.05); }
+
+        /* Sección Spotify */
+        .spotify-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 40px;
+            background: #0a0a0a;
+            border-radius: 20px;
+            border: 1px solid #1db95422;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-spotify {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #1DB954;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            width: 100%;
+            max-width: 450px;
+            font-size: 0.9rem;
+        }
+
+        .btn-spotify:hover { background: #1ed760; transform: scale(1.03); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="pedro-aznar.html" class="back-link">← Volver</a>
+    <div class="header">
+        <h1>Discografía Cronológica</h1>
+        <p>La extensa obra de Pedro Aznar: Bandas, Proyectos y Solista</p>
+    </div>
+
+    <div class="chrono-grid">
+        <div class="album-card"><div class="year-tag">1974</div><div class="album-name">Madre Atómica</div><div class="band-label tag-bandas">Madre Atómica</div></div>
+        <div class="album-card"><div class="year-tag">1977</div><div class="album-name">Pinta tu Aldea</div><div class="band-label tag-bandas">Alas</div></div>
+
+        <div class="album-card"><div class="year-tag">1978</div><div class="album-name">Serú Girán</div><div class="band-label tag-seru">Serú Girán</div></div>
+        <div class="album-card"><div class="year-tag">1979</div><div class="album-name">La Grasa de las Capitales</div><div class="band-label tag-seru">Serú Girán</div></div>
+        <div class="album-card"><div class="year-tag">1980</div><div class="album-name">Bicicleta</div><div class="band-label tag-seru">Serú Girán</div></div>
+        <div class="album-card"><div class="year-tag">1981</div><div class="album-name">Peperina</div><div class="band-label tag-seru">Serú Girán</div></div>
+        <div class="album-card"><div class="year-tag">1982</div><div class="album-name">No llores por mí, Argentina</div><div class="band-label tag-seru">Serú Girán</div></div>
+        
+        <div class="album-card"><div class="year-tag">1982</div><div class="album-name">Pedro Aznar</div><div class="band-label tag-solista">Pedro Aznar</div></div>
+
+        <div class="album-card"><div class="year-tag">1984</div><div class="album-name">First Circle</div><div class="band-label tag-pat">Pat Metheny Group</div></div>
+        <div class="album-card"><div class="year-tag">1985</div><div class="album-name">The Falcon and the Snowman</div><div class="band-label tag-pat">Pat Metheny Group</div></div>
+        <div class="album-card"><div class="year-tag">1985</div><div class="album-name">Contemplación</div><div class="band-label tag-solista">Pedro Aznar</div></div>
+        <div class="album-card"><div class="year-tag">1986</div><div class="album-name">Tango</div><div class="band-label tag-tango">García & Aznar</div></div>
+        <div class="album-card"><div class="year-tag">1986</div><div class="album-name">Fotos de Tokio</div><div class="band-label tag-solista">Pedro Aznar</div></div>
+        <div class="album-card"><div class="year-tag">1987</div><div class="album-name">Hombre mirando al sudeste</div><div class="band-label tag-especial">Banda Sonora</div></div>
+        <div class="album-card"><div class="year-tag">1989</div><div class="album-name">Letter from Home</div><div class="band-label tag-pat">Pat Metheny Group</div></div>
+
+        <div class="album-card"><div class="year-tag">1990</div><div class="album-name">Últimas imágenes del naufragio</div><div class="band-label tag-especial">Banda Sonora</div></div>
+        <div class="album-card"><div class="year-tag">1991</div><div class="album-name">Tango 4</div><div class="band-label tag-tango">García & Aznar</div></div>
+        <div class="album-card"><div class="year-tag">1992</div><div class="album-name">Serú '92</div><div class="band-label tag-seru">Serú Girán</div></div>
+        <div class="album-card"><div class="year-tag">1995</div><div class="album-name">David y Goliat</div><div class="band-label tag-solista">Pedro Aznar</div></div>
+        <div class="album-card"><div class="year-tag">1998</div><div class="album-name">Cuerpo y Alma</div><div class="band-label tag-solista">Pedro Aznar</div></div>
+
+        <div class="album-card"><div class="year-tag">2000</div><div class="album-name">Caja de música</div><div class="band-label tag-solista">Pedro Aznar</div></div>
+        <div class="album-card"><div class="year-tag">2002</div><div class="album-name">Parte de volar</div><div class="band-label tag-solista">Pedro Aznar</div></div>
+        <div class="album-card"><div class="year-tag">2003</div><div class="album-name">Mudras</div><div class="band-label tag-solista">Pedro Aznar</div></div>
+        <div class="album-card"><div class="year-tag">2005</div><div class="album-name">Aznar canta Brasil</div><div class="band-label tag-solista">Pedro Aznar</div></div>
+        <div class="album-card"><div class="year-tag">2008</div><div class="album-name">Quebrado</div><div class="band-label tag-solista">Pedro Aznar</div></div>
+
+        <div class="album-card"><div class="year-tag">2010</div><div class="album-name">A solas con el mundo</div><div class="band-label tag-solista">Pedro Aznar</div></div>
+        <div class="album-card"><div class="year-tag">2012</div><div class="album-name">Puentes Amarillos</div><div class="band-label tag-especial">Homenaje Spinetta</div></div>
+        <div class="album-card"><div class="year-tag">2016</div><div class="album-name">Contraluz</div><div class="band-label tag-solista">Pedro Aznar</div></div>
+        <div class="album-card"><div class="year-tag">2019</div><div class="album-name">Abrazo de hermanos</div><div class="band-label tag-especial">Aznar / García</div></div>
+
+        <div class="album-card"><div class="year-tag">2021</div><div class="album-name">Flor y raíz</div><div class="band-label tag-solista">Pedro Aznar</div></div>
+        <div class="album-card"><div class="year-tag">2022</div><div class="album-name">El mundo no se hizo en dos días</div><div class="band-label tag-solista">Pedro Aznar</div></div>
+    </div>
+
+    <div class="spotify-section">
+        <h2 style="color: #888; font-size: 1rem; margin-bottom: 10px; text-transform: uppercase;">Escuchar en Plataformas Oficiales</h2>
+        
+        <a href="https://open.spotify.com/artist/2FFrhWZS9vJsh2UvxYPRr6?si=Aahy52OPSQyvFRskGt8prQ" target="_blank" class="btn-spotify">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="20" alt="Spotify">
+            ESCUCHAR PEDRO AZNAR EN PLATAFORMAS
+        </a>
+
+        <a href="https://open.spotify.com/artist/6CrQKZeuSKNYgrE7PeYqJ1?si=WlJqbC2nTyCrYGcF8el4XQ" target="_blank" class="btn-spotify">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="20" alt="Spotify">
+            ESCUCHAR SERÚ GIRÁN EN PLATAFORMAS
+        </a>
+
+        <a href="https://open.spotify.com/artist/4uBSazM6snEc9wCG3jMlYt?si=1CzVKB1sRKuEsMNpsNujZQ" target="_blank" class="btn-spotify">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="20" alt="Spotify">
+            ESCUCHAR PAT METHENY GROUP
+        </a>
+
+        <a href="https://open.spotify.com/artist/1DAJ5jfLrqvB6DU52HByvb?si=pMX7Cp83R7Sp-kgNgdr4AQ" target="_blank" class="btn-spotify">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="20" alt="Spotify">
+            ESCUCHAR ALAS EN PLATAFORMAS
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
 
