@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/png" href="https://el-rincon-inedito.github.io/Imagenes/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinetta / Aznar: Lenny Blues (1981) | El Rincón Inédito</title>
+    <style>
+        :root {
+            --primary: #00ff88;
+            --bg: #050505;
+            --card-bg: #121212;
+            --text: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: bold; transition: 0.2s; }
+        .back-link:hover { color: white; }
+
+        /* Encabezado y Portada */
+        .header-concierto { text-align: center; margin-bottom: 40px; }
+        .header-concierto h1 { color: var(--primary); font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; line-height: 1.2; }
+        .portada {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            margin-bottom: 30px;
+            border: 1px solid #333;
+        }
+
+        /* Información y Setlist */
+        .info-box { background: var(--card-bg); padding: 30px; border-radius: 15px; margin-bottom: 30px; border: 1px solid #222; }
+        .info-box h2 { color: var(--primary); font-size: 1.2rem; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px; text-transform: uppercase; }
+        .info-box p { margin-bottom: 15px; text-align: justify; font-size: 0.95rem; color: #ccc; }
+
+        .setlist { list-style: none; padding: 0; }
+        .setlist li { 
+            padding: 10px 0; 
+            border-bottom: 1px solid #1a1a1a; 
+            color: #eee;
+            font-size: 1rem;
+        }
+
+        /* Botón de Descarga */
+        .download-section { text-align: center; padding: 40px 0; border-top: 1px solid #222; }
+        .btn-download {
+            background: var(--primary);
+            color: black;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+        }
+        .btn-download:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+        }
+
+        .file-info { margin-top: 15px; color: #666; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="#" id="dynamic-back-link" class="back-link">← Volver</a>
+
+        <div class="header-concierto">
+            <h1>LUIS ALBERTO SPINETTA / PEDRO AZNAR:<br>LENNY BLUES</h1>
+            <p style="color: #888;">1981 - Teatro del Este, Buenos Aires</p>
+            <img src="../../Imagenes/Spinetta/Conciertos/lenny-blues-81.jpg" alt="Spinetta y Pedro Aznar - Lenny Blues 1981" class="portada">
+        </div>
+
+        <div class="info-box">
+            <h2>Reseña Histórica</h2>
+            <p>La obra <strong>“Lenny Blues”</strong>, estrenada alrededor de 1980–1981, constituye una pieza casi oculta pero profundamente reveladora del cruce entre el teatro y el rock argentino. Escrita y dirigida por Robertino Granados, la obra tomaba como punto de partida la vida del comediante estadounidense Lenny Bruce, figura emblemática de la contracultura. En el contexto argentino de la época, Bruce funcionaba como un símbolo potente de libertad de expresión frente a la censura.</p>
+            <p>La puesta se llevó a cabo en el Teatro del Este, integrando actuación, música y una narrativa fragmentaria. Uno de los aspectos más destacados fue su música original, compuesta en colaboración por <strong>Luis Alberto Spinetta</strong> y <strong>Pedro Aznar</strong>. El llamado “Tema de Lenny” funcionaba como leitmotiv de la obra, otorgándole una identidad musical propia y experimental.</p>
+            <p>A pesar de su riqueza artística, la música de Lenny Blues no tuvo una edición formal, convirtiéndose en un material de culto. La participación de Spinetta y Aznar evidencia cómo ambos músicos exploraban nuevas formas de narración y sensibilidad más allá del formato discográfico tradicional.</p>
+        </div>
+
+        <div class="info-box">
+            <h2>Set List</h2>
+            <ul class="setlist">
+                <li>01. Lenny Blues (Tema de Lenny)</li>
+            </ul>
+        </div>
+
+        <div class="download-section">
+            <a href="https://archive.org/download/tema-de-lenny/Tema%20De%20Lenny.zip" class="btn-download" download>
+                ⬇️ DESCARGAR OBRA (.ZIP)
+            </a>
+            <div class="file-info">
+                Formato: MP3 (Registro Original) <br>
+                Servidor: Archive.org (Oficial)
+            </div>
+        </div>
+
+        <p style="text-align: center; color: #444; font-size: 0.8rem; margin-top: 50px;">
+            Material difundido con fines culturales y de preservación histórica.
+        </p>
+    </div>
+
+    <script>
+    window.onload = function() {
+        const backLink = document.getElementById('dynamic-back-link');
+        const referrer = document.referrer;
+
+        // Lógica de navegación inteligente para página compartida
+        if (referrer.includes('spinetta.html')) {
+            backLink.href = referrer;
+            backLink.innerHTML = "← Volver a Spinetta";
+        } 
+        else if (referrer.includes('pedro-aznar.html')) {
+            backLink.href = referrer;
+            backLink.innerHTML = "← Volver a Pedro Aznar";
+        }
+        else if (referrer.includes('conciertos-general.html') || referrer.includes('archivo-general.html')) {
+            backLink.href = referrer;
+            backLink.innerHTML = "← Volver al Archivo";
+        }
+        else if (referrer !== "") {
+            backLink.href = referrer;
+            backLink.innerHTML = "← Volver";
+        } 
+        else {
+            // Si entra directo de Google o link externo
+            backLink.href = "../../index.html";
+            backLink.innerHTML = "← Ir al Inicio";
+        }
+    };
+    </script>
+    
+</body>
+</html>
+
