@@ -1,1 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/png" href="../../Imagenes/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Aznar | El Rincón Inédito</title>
+<style>
+    /* --- Estilos unificados del Index --- */
+    :root { 
+        --primary: #00ff88; 
+        --bg: #050505; 
+        --card-bg: #121212; 
+        --text: #e0e0e0; 
+    }
+    
+    body { 
+        background-color: var(--bg); 
+        color: var(--text); 
+        font-family: sans-serif; 
+        margin: 0; 
+        padding: 0; 
+        line-height: 1.6;
+    }
+
+    /* Estilos de las tarjetas de sección */
+    .card-seccion {
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid #333;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        height: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Clase para secciones deshabilitadas */
+    .card-disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        filter: grayscale(1);
+    }
+
+    @media (hover: hover) {
+        .card-seccion:not(.card-disabled):hover {
+            transform: translateY(-5px);
+            border-color: var(--primary) !important;
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.15) !important;
+        }
+    }
+
+    /* Layout del Artista */
+    .header-artista { text-align: center; padding: 60px 5% 40px 5%; background: linear-gradient(to bottom, #111, var(--bg)); }
+    .foto-perfil { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--primary); object-fit: cover; }
+    .bio { max-width: 700px; margin: 20px auto; line-height: 1.6; color: #bbb; padding: 0 20px; }
+    
+    .grid-secciones { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+        gap: 20px; 
+        max-width: 1000px; 
+        margin: 0 auto; 
+        padding-bottom: 60px;
+    }
+
+    footer { text-align: center; padding: 40px; color: #555; border-top: 1px solid #222; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+
+    <nav style="background: rgba(0,0,0,0.9); padding: 10px 3%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333;">
+    
+    <a href="../../index.html" style="text-decoration: none; display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+        <span style="font-size: 1.8rem;">🎙️</span>
+        <div style="display: flex; flex-direction: column; line-height: 1.1;">
+            <span style="font-weight: 800; font-size: 1.2rem; color: white; letter-spacing: -0.5px;">EL RINCÓN</span>
+            <span style="font-weight: 800; font-size: 1.2rem; color: var(--primary); letter-spacing: -0.5px;">INÉDITO</span>
+        </div>
+    </a>
+    
+    <div style="display: flex; gap: 15px; align-items: center;">
+        <a href="../../artistas.html" style="color:white; text-decoration:none; font-size: 1rem; font-weight: 500;">Artistas</a>
+        <a href="../../index.html#subir" style="color:var(--primary); border: 1px solid var(--primary); padding: 6px 15px; border-radius: 20px; text-decoration:none; font-size: 0.9rem; font-weight: bold; display: flex; align-items: center; justify-content: center; line-height: 1; transition: 0.3s;">
+            Subir
+        </a>
+    </div>
+    </nav>
+    
+
+    <div class="header-artista">
+        <img src="../../Imagenes/Aznar/perfil-aznar.jpg" class="foto-perfil" alt="Pedro Aznar">
+        <h1>Pedro Aznar</h1>
+        <p class="bio">Multiinstrumentista, compositor y una de las voces más virtuosas de la música argentina. Recopilamos aquí sus experimentaciones, colaboraciones únicas y registros en vivo inéditos.</p>
+    </div>
+
+    <section style="padding: 40px 5%; text-align: center;">
+        <h2 style="color: var(--primary); margin-bottom: 30px; font-size: 2rem; letter-spacing: 2px;">SECCIONES</h2>
+        
+        <div class="grid-secciones">
+            
+            <a href="aznar-bio.html" style="text-decoration: none;">
+                <div class="card-seccion">
+                    <span style="font-size: 2.5rem;">📖</span>
+                    <h3 style="color: white; margin-top: 15px;">Biografía</h3>
+                    <p style="color: #888; font-size: 0.9rem;">Trayectoria y legado musical.</p>
+                </div>
+            </a>
+
+            <a href="aznar-discos.html" style="text-decoration: none;">
+                <div class="card-seccion">
+                    <span style="font-size: 2.5rem;">💿</span>
+                    <h3 style="color: white; margin-top: 15px;">Discografía</h3>
+                    <p style="color: #888; font-size: 0.9rem;">Producciones oficiales y alternativas.</p>
+                </div>
+            </a>
+
+            <a href="aznar-conciertos.html" style="text-decoration: none;">
+                <div class="card-seccion">
+                    <span style="font-size: 2.5rem;">🎸</span>
+                    <h3 style="color: white; margin-top: 15px;">Conciertos</h3>
+                    <p style="color: #888; font-size: 0.9rem;">Archivos en vivo inéditos.</p>
+                </div>
+            </a>
+
+            <div class="card-seccion card-disabled">
+                <span style="font-size: 2.5rem;">🎙️</span>
+                <h3 style="color: white; margin-top: 15px;">Entrevistas</h3>
+                <p style="color: #888; font-size: 0.9rem;">(Próximamente)</p>
+            </div>
+
+            <div class="card-seccion card-disabled">
+                <span style="font-size: 2.5rem;">📂</span>
+                <h3 style="color: white; margin-top: 15px;">Inéditos</h3>
+                <p style="color: #888; font-size: 0.9rem;">(Próximamente)</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 El Rincón Inédito | Milton Caballieri. Preservando el legado musical.</p>
+    </footer>
+
+</body>
+</html>
 
