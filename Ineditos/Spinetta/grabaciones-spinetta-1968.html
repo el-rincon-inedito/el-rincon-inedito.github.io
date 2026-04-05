@@ -122,15 +122,13 @@
 window.onload = function() {
     const backLink = document.getElementById('dynamic-back-link');
     const referrer = document.referrer;
-    
-    // Obtenemos el nombre de nuestro propio sitio (ej: elrinconinedito.com o localhost)
-    const host = window.location.hostname;
 
-    // VALIDACIÓN: Solo usamos el historial si hay referrer Y si ese referrer pertenece a nuestro sitio
-    if (referrer !== "" && referrer.includes(host)) {
+    // 1. Verificamos si hay un origen y si ese origen NO contiene la palabra 'youtube'
+    if (referrer !== "" && !referrer.includes('youtube.com')) {
+        
         backLink.href = "javascript:history.back()";
         
-        // Personalización del texto
+        // Personalización del texto según la URL de origen
         if (referrer.includes('spinetta')) {
             backLink.innerHTML = "← Volver a Spinetta";
         } else if (referrer.includes('aznar')) {
@@ -141,13 +139,15 @@ window.onload = function() {
             backLink.innerHTML = "← Volver";
         }
     } 
-    // Si viene de YouTube, Google, o entró directo: lo mandamos a la sección de artistas
+    // 2. Si viene de YouTube o si entró directo (sin historial)
     else {
+        // Ajustamos la ruta para que siempre lo mande al index de tu web
         backLink.href = "../../index.html"; 
         backLink.innerHTML = "← Ir al Inicio";
     }
 };
         </script>
+    
     
     
 
