@@ -19,10 +19,12 @@
             font-family: 'Inter', sans-serif;
             margin: 0;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: bold; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .back-link:hover { color: white; transform: translateX(-3px); }
 
         /* Encabezado y Portada */
         .header-concierto { text-align: center; margin-bottom: 40px; }
@@ -39,13 +41,15 @@
 
         /* Información y Setlist */
         .info-box { background: var(--card-bg); padding: 30px; border-radius: 15px; margin-bottom: 30px; border: 1px solid #222; }
-        .info-box h2 { color: var(--primary); font-size: 1.2rem; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px; }
+        .info-box h2 { color: var(--primary); font-size: 1.2rem; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px; text-transform: uppercase; }
+        .info-box p { margin-bottom: 15px; color: #ccc; }
         
         .setlist { list-style: none; padding: 0; }
         .setlist li { 
-            padding: 8px 0; 
+            padding: 10px 0; 
             border-bottom: 1px solid #1a1a1a; 
             color: #ccc;
+            font-size: 0.95rem;
         }
 
         /* Botón de Descarga */
@@ -64,6 +68,7 @@
         .btn-download:hover {
             transform: scale(1.03);
             background: #00cc6e;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
         }
 
         .file-info { margin-top: 15px; color: #666; font-size: 0.8rem; }
@@ -82,9 +87,15 @@
 
         <div class="info-box">
             <h2>Reseña Histórica</h2>
-            <p>El registro conocido como <strong>“Spinetta – Experiencia”</strong> pertenece a una etapa poco documentada pero fundamental en la transición artística de Luis Alberto, ubicada entre fines de los años 70 y comienzos de los 80. Este material remite directamente al proyecto <strong>Experiencia Demente</strong>, una formación efímera que anticipó muchos de los cambios estéticos que luego se consolidarían en su obra posterior.</p>
-            <p>Luego de la disolución de Invisible, Spinetta inició un período de exploración marcado por la fusión entre el rock y el jazz. En este laboratorio creativo comenzaron a gestarse composiciones que aún no habían sido editadas oficialmente, como <strong>“Kamikaze”</strong>, <strong>“Viento celeste”</strong> o <strong>“El sueño de Chita”</strong>, piezas que reaparecerían más tarde en discos como <em>Kamikaze</em> (1982) y en el desarrollo del sonido de Spinetta Jade.</p>
-            <p>Desde el punto de vista histórico, estos registros capturan el pasaje desde el rock progresivo de los 70 hacia una nueva etapa más híbrida e introspectiva. Al tratarse de material no oficial, las grabaciones poseen un carácter fragmentario y una calidad sonora variable, pero funcionan como un documento de archivo invaluable para reconstruir la evolución del artista antes de su viaje a Estados Unidos para grabar <em>Only Love Can Sustain</em>.</p>
+            <p>El registro conocido como <strong>“Experiencia Demente – Mar del Plata, verano de 1979”</strong> corresponde a un recital en vivo realizado en enero de 1979 en la ciudad de Mar del Plata, y constituye el único concierto documentado de esta formación. Lejos de tratarse de ensayos, se trató de una presentación concreta ante público, en el marco del cierre del llamado “proyecto jazzero” de Luis Alberto Spinetta.</p>
+            
+            <p>La banda Experiencia Demente estuvo integrada por <strong>Luis Alberto Spinetta</strong> en voz y guitarra, junto a <strong>Gustavo Bazterrica, Carlos Rafanelli y Héctor Cerávolo</strong>. Esta formación surgió como una continuación directa de la llamada Banda Spinetta, un conjunto de músicos vinculados al jazz con los que el artista venía explorando una fusión entre rock y música instrumental desde 1977.</p>
+            
+            <p>El recital tuvo lugar en Mar del Plata —con registros que lo ubican en espacios como Playa Mar Chiquita o ámbitos similares del circuito veraniego— y presentó un repertorio que resulta hoy especialmente relevante. Durante esa actuación se interpretaron temas como “Para ir”, “Kamikaze”, “Amor de primavera”, “Pájaro de fe”, “Ondas y caderas”, “Viento celeste” y “El sueño de Chita”. Estas composiciones permiten observar un momento de transición creativa: varias de ellas serían retomadas más adelante en su carrera, particularmente en proyectos como <strong>Spinetta Jade</strong> o en su etapa solista de los años 80.</p>
+
+            <p>Desde el punto de vista musical, el concierto refleja una orientación claramente experimental. Predomina una lógica de interacción entre los músicos, con estructuras abiertas, pasajes instrumentales extensos y una fuerte impronta de jazz-rock. Este enfoque marca una diferencia con las etapas anteriores de Spinetta y anticipa desarrollos posteriores donde lograría una síntesis entre complejidad armónica y mayor accesibilidad melódica.</p>
+
+            <p>Históricamente, Experiencia Demente tuvo una existencia muy breve. Poco después de este recital, Spinetta viajó a Estados Unidos para grabar el álbum <em>Only Love Can Sustain</em>, lo que provocó la disolución del proyecto. Sin embargo, esta presentación en Mar del Plata funciona como un punto de inflexión: allí ya se encuentran en estado germinal muchas de las ideas que definirían su obra en los años siguientes.</p>
         </div>
 
         <div class="info-box">
@@ -105,7 +116,7 @@
                 ⬇️ DESCARGAR REGISTRO (.ZIP)
             </a>
             <div class="file-info">
-                Formato: MP3 (Registro histórico) <br>
+                Formato: MP3 (Registro histórico en vivo) <br>
                 Servidor: Archive.org (Oficial)
             </div>
         </div>
@@ -138,4 +149,3 @@
     </script>
 </body>
 </html>
-
